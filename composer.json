@@ -1,15 +1,15 @@
 {
-    "name":"joomimart/csv",
+    "name":"pllano/api",
     "type": "library",
     "description": "Read very large CSV files in parts",
-    "keywords": ["csv", "read", "parts"],
+    "keywords": ["api", "pllano"],
     "license": "MIT",
-	"homepage": "https://github.com/joomimart/csv",
+	"homepage": "https://github.com/pllano/api",
     "authors": [
         {
-            "name": "joomiMart",
-            "email": "support@joomimart.com",
-            "homepage": "https://joomimart.com/"
+            "name": "PllanoApi",
+            "email": "support@pllano.com",
+            "homepage": "https://pllano.com/"
         }
     ],
     "require":{
@@ -17,7 +17,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "joomiMart\\Csv\\": "src/"
+            "PllanoApi\\Api\\": "src/"
         }
     },
     "extra": {
