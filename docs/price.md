@@ -17,22 +17,22 @@
 
 ```json
 {
-"api": "v1.0",
-"query": "GET",
-"model": "price",
-"total": 866,
-"limit": 10,
-"offset": 0,
-"order": "DESC",
-"sort": "id",
-"state": 1,
-"type": null,
-"brand": null,
-"serie": null,
-"articul": null,
-"brand_id": null,
-"product_id": null,
-"search": null,
+"api": "v1.0", // Версия API
+"query": "GET", // Тип запроса  GET, POST, PUT, DELETE
+"model": "price", // Модель
+"total": 20755, // Колличество найденых товаров
+"limit": 10, // Лимит вывода на страницу. По умолчанию 10
+"offset": 0, // Страница. По умолчанию 0
+"order": "DESC", // Сортировка DESC или ASC. По умолчанию DESC
+"sort": "uid", // Поле сортировки. По умолчанию uid
+"state": 1, // Статус товара активен 1 если неактивен 0. По умолчанию 1
+"type": null, // Фильтровать по указанному типу товара. По умолчанию null
+"brand": null, // Фильтровать по указанному бренду. По умолчанию null
+"serie": null, // Фильтровать по указанной серии. По умолчанию null
+"articul": null, // Фильтровать по указанному артикулу. По умолчанию null
+"brand_id": null, // Товары конкретного бренда. По умолчанию null
+"product_id": null, // id товара. По умолчанию null
+"search": null, // Полнотекстовый поисковый запрос. По умолчанию null
 "source": [
     {
     "uid": "7a064a035722 - уникальный id на платформе",
