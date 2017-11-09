@@ -17,22 +17,22 @@
 
 ```json
 {
-"api": "v1.0", // Версия API
-"query": "GET", // Тип запроса  GET, POST, PUT, DELETE
-"model": "price", // Модель
-"total": 20755, // Колличество найденых товаров
-"limit": 10, // Лимит вывода на страницу. По умолчанию 10
-"offset": 0, // Страница. По умолчанию 0
-"order": "DESC", // Сортировка DESC или ASC. По умолчанию DESC
-"sort": "uid", // Поле сортировки. По умолчанию uid
-"state": 1, // Статус товара активен 1 если неактивен 0. По умолчанию 1
-"type": null, // Фильтровать по указанному типу товара. По умолчанию null
-"brand": null, // Фильтровать по указанному бренду. По умолчанию null
-"serie": null, // Фильтровать по указанной серии. По умолчанию null
-"articul": null, // Фильтровать по указанному артикулу. По умолчанию null
-"brand_id": null, // Товары конкретного бренда. По умолчанию null
-"product_id": null, // id товара. По умолчанию null
-"search": null, // Полнотекстовый поисковый запрос. По умолчанию null
+"api": "v1.0",
+"query": "GET",
+"model": "price",
+"total": 20755,
+"limit": 10,
+"offset": 0,
+"order": "DESC",
+"sort": "uid",
+"state": 1,
+"type": null,
+"brand": null,
+"serie": null,
+"articul": null,
+"brand_id": null,
+"product_id": null,
+"search": null,
 "source": [
     {
     "uid": "7a064a035722 - уникальный id на платформе",
@@ -66,15 +66,24 @@
 Описание полей смотрите в [выдаче полного резюме](#resume-fields).
 Дополнительно ответ содержит:
 
-Имя | Тип | Описание
---- | --- | --------
-total_views | number | число просмотров резюме
-new_views | number | число новых просмотров. Данный счетчик сбрасывается при получении [детальной истории просмотров](#views).
-views_url | string | url, по которому необходимо сделать GET запрос для получения [детальной истории просмотров](#views)
-status | object | [статус резюме](#status)
-similar_vacancies | object | информация о вакансиях, похожих на это резюме
-similar_vacancies.url | string | url, по которому необходимо сделать GET запрос, для получения [вакансий, похожих на данное резюме](#similar)
-similar_vacancies.total | number | общее количество похожих вакансий
+Имя | По умолчанию | Тип | Описание
+--- | ---- | --- | --------
+api | v1.0 | string | Версия API
+query | GET | string | Дублируем тип запроса  GET, POST, PUT, DELETE
+model | price | string | Модель
+total | 0 | boolean | Колличество найденых товаров
+limit | 10 | boolean | Лимит вывода товаров на страницу.
+offset | 0 | boolean | Страница (смещение)
+order | DESC | string | Сортировка DESC или ASC
+sort | uid | string | Поле сортировки
+state | 1 | boolean | Статус товара активен 1 если неактивен 0
+type | null | string | Поиск по указанному типу товара
+brand | null | string | Поиск по указанному бренду товара
+serie | null | string | Поиск по указанной серии (модели) товара
+articul | null | string | Поиск по указанному артикулу товара
+brand_id | null | boolean | Товары конкретного бренда
+product_id | null | boolean | id товара
+search | null | string | Полнотекстовый поисковый запрос
 
 <a name="item"></a>
 ## Просмотр товара
