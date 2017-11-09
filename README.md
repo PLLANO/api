@@ -93,18 +93,13 @@ if ($count >= 1) {
 Общайтесь с нами через почту api@pllano.com
 
 Если вы нашли баг в работе PLLANO REST API загляните в
-[issues](https://github.com/hhru/api/issues), возможно, про него мы уже знаем и
+[issues](https://github.com/pllano/api/issues), возможно, про него мы уже знаем и
 чиним. Если нет, лучше всего сообщить о нём там. Там же вы можете оставлять свои
 пожелания и предложения.
 
-Если вы нашли проблему на одном из сайтов HeadHunter,
-[напишите в поддержку по сайту](https://hh.ru/feedback) или в
-[сообщество поддержки](https://feedback.hh.ru/).
-
 За новостями вы можете следить по
-[коммитам](https://github.com/hhru/api/commits/master) в этом репозитории.
-[RSS](https://github.com/hhru/api/commits/master.atom).
-
+[коммитам](https://github.com/pllano/api/commits/master) в этом репозитории.
+[RSS](https://github.com/pllano/api/commits/master.atom).
 
 Лицензия на библиотеку PLLANO REST API PHP
 -------
