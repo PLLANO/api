@@ -27,14 +27,18 @@
 
 ## Список товаров
 
-`GET /api/v1/{format}/price/` возвращает список всех вашиш товаров. Без `public_key` вернёт `403 Forbidden`.
 `https://ua.pllano.com/api/v1/json/price/?public_key=test` возвращает тестовые данные
+
+Запрос `GET /api/v1/{format}/price/` возвращает список всех вашиш товаров. 
+
+Без `public_key` вернёт `403 Forbidden`.
 
 ### Ответ
 
 Успешный ответ приходит с кодом `200 OK` и содержит тело:
 
 `HTTP/1.1 200 OK`
+
 `Content-Type: application/json`
 
 ```json
