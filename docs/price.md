@@ -34,6 +34,48 @@
 
 Без `public_key` вернёт `403 Forbidden`.
 
+## Тело запроса
+
+```json
+{
+"public_key": "test",
+"query": "GET",
+"model": "price",
+"limit": 10,
+"offset": 0,
+"order": "DESC",
+"sort": "uid",
+"state": 1,
+"type": null,
+"brand": null,
+"serie": null,
+"articul": null,
+"brand_id": null,
+"product_id": null,
+"search": null
+}
+```
+
+Имя | По умолчанию | Тип | Описание
+--- | ---- | --- | --------
+public_key | test | string | Если пустое или неверное значение - API отдаст ошибку 403 с кодом `200 OK`
+api | v1.0 | string | Версия API
+query | null | string | Не обезетельно. Дублируем тип запроса GET, POST, PUT, DELETE. Если значение указано то оно имеет выше приоритет чем в заголовке.
+model | index | string | Модель
+total | 0 | boolean | Колличество найденых товаров
+limit | 10 | boolean | Лимит вывода товаров на страницу.
+offset | 0 | boolean | Страница (смещение)
+order | DESC | string | Сортировка DESC или ASC
+sort | uid | string | Поле сортировки
+state | 1 | boolean | Статус товара активен 1 если неактивен 0
+type | null | string | Поиск по указанному типу товара
+brand | null | string | Поиск по указанному бренду товара
+serie | null | string | Поиск по указанной серии (модели) товара
+articul | null | string | Поиск по указанному артикулу товара
+brand_id | null | boolean | Товары конкретного бренда
+product_id | null | boolean | id товара
+search | null | string | Полнотекстовый поисковый запрос
+
 ### Ответ
 
 Успешный ответ приходит с кодом `200 OK` и содержит тело:
@@ -86,48 +128,6 @@
     "seller_product_name": "Название товара на вашем сайте"
     }
   ]
-}
-```
-
-## Тело запроса
-
-Имя | По умолчанию | Тип | Описание
---- | ---- | --- | --------
-public_key | test | string | Если пустое или неверное значение - API отдаст ошибку 403 с кодом `200 OK`
-api | v1.0 | string | Версия API
-query | null | string | Не обезетельно. Дублируем тип запроса GET, POST, PUT, DELETE. Если значение указано то оно имеет выше приоритет чем в заголовке.
-model | index | string | Модель
-total | 0 | boolean | Колличество найденых товаров
-limit | 10 | boolean | Лимит вывода товаров на страницу.
-offset | 0 | boolean | Страница (смещение)
-order | DESC | string | Сортировка DESC или ASC
-sort | uid | string | Поле сортировки
-state | 1 | boolean | Статус товара активен 1 если неактивен 0
-type | null | string | Поиск по указанному типу товара
-brand | null | string | Поиск по указанному бренду товара
-serie | null | string | Поиск по указанной серии (модели) товара
-articul | null | string | Поиск по указанному артикулу товара
-brand_id | null | boolean | Товары конкретного бренда
-product_id | null | boolean | id товара
-search | null | string | Полнотекстовый поисковый запрос
-
-```json
-{
-"public_key": "test",
-"query": "GET",
-"model": "price",
-"limit": 10,
-"offset": 0,
-"order": "DESC",
-"sort": "uid",
-"state": 1,
-"type": null,
-"brand": null,
-"serie": null,
-"articul": null,
-"brand_id": null,
-"product_id": null,
-"search": null
 }
 ```
 
