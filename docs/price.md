@@ -1,181 +1,58 @@
 # Резюме
 
-* [Список резюме авторизованного пользователя](#mine)
-* [Просмотр резюме](#item)
-  * [Дополнительные поля для автора резюме](#additional-author-fields)
-  * [Платные услуги для соискателя, связанные с резюме](#applicant-paid-services)
-  * [Дополнительные поля для работодателя](#additional-employer-fields)
-  * [Платные услуги для работодателя, связанные с резюме](#paid-services)
-* [Создание и редактирование резюме](#create_edit)
-* [Публикация и продление резюме](#publish)
-* [Информация о статусе резюме и готовности резюме к публикации](#status-and-publication)
-* [Клонирование резюме](#clone)
-* [Удаление резюме](#delete)
-* [Проверка возможности создания резюме](#availability)
-* [Условия заполнения полей резюме](#conditions)
-  * [Условия заполнения полей нового резюме](#init-conditions)
-  * [Условия заполнения контактов в резюме](#conditions-contacts)
-  * [Дополнительные правила заполнения полей резюме](#conditions-other)
-* [Короткое представление резюме](#resume-nano)
-* [Сокращенное представление резюме](#resume-short)
-* [Ссылки на скачивание резюме в нескольких форматах](#download-links)
-* [Статусы резюме](#status)
-* [Видимость резюме](#access_type)
-  * [Списки видимости резюме](#visibility_lists)
-  * [Получение списка типов видимости резюме](#get_access_types)
-* [История просмотра резюме](#views)
-* [Поиск по вакансиям, похожим на резюме](#similar)
+* [Список товаров](#list)
+* [Конкретный товар](#item)
+  * [Изменяем цену для маркетплейсов](#marketplace-item-edit)
 
 
-<a name="mine"></a>
-## Список резюме авторизованного пользователя
+<a name="list"></a>
+## Список товаров
 
-`GET /resumes/mine` возвращает список резюме авторизованного пользователя. Без
-авторизации вернёт `403 Forbidden`.
+`GET /api/v1/{format}/price/` возвращает список всех вашиш товаров. Без public_key вернёт `403 Forbidden`.
+`https://ua.pllano.com/api/v1/json/price/?public_key=test` возвращает тестовые данные
 
 ```json
 {
-    "items": [
+    "api": "v1.0",
+    "query": "GET",
+    "model": "price",
+    "total": 866,
+    "limit": 10,
+    "offset": 0,
+    "order": "DESC",
+    "sort": "id",
+    "state": 1,
+    "type": null,
+    "brand": null,
+    "serie": null,
+    "articul": null,
+    "brand_id": null,
+    "product_id": null,
+    "search": null,
+    "source": [
         {
-            "access": {
-                "type": {
-                    "id": "clients",
-                    "name": "видно всем компаниям, зарегистрированным на HeadHunter"
-                }
-            },
-            "total_views": 0,
-            "new_views": 0,
-            "status": {
-                "id": "published",
-                "name": "опубликовано"
-            },
-            "views_url": "https://api.hh.ru/resumes/0123456789abcdef/views",
-            "id": "0123456789abcdef",
-            "title": "Начинающий специалист",
-            "url": "https://api.hh.ru/resumes/0123456789abcdef",
-            "first_name": "Иван",
-            "last_name": "Иванов",
-            "middle_name": "Иванович",
-            "age": 19,
-            "alternate_url": "https://hh.ru/resume/0123456789abcdef",
-            "created_at": "2015-02-06T12:00:00+0300",
-            "updated_at": "2015-04-20T16:24:15+0300",
-            "area": {
-                "id": "1",
-                "name": "Москва",
-                "url": "https://api.hh.ru/areas/1"
-            },
-            "certificate": [
-                {
-                    "achieved_at": "2015-01-01",
-                    "owner": null,
-                    "title": "тест",
-                    "type": "custom",
-                    "url": "http://example.com/"
-                }
-            ],
-            "education": {
-                "primary": [
-                    {
-                        "name": "Российский государственный социальный университет, Москва",
-                        "name_id": "39420",
-                        "organization": "Факультет информационных технологий",
-                        "organization_id": null,
-                        "result": "Информатика",
-                        "result_id": null,
-                        "year": 2012
-                    }
-                ]
-            },
-            "total_experience": {
-                "months": 118
-            },
-            "experience": [
-                {
-                    "position": "пастух",
-                    "start": "2010-01-01",
-                    "end": null,
-                    "company": "Рога и копыта",
-                    "industries": [
-                        {
-                            "id": "51.643",
-                            "name": "Благоустройство и уборка территорий и зданий"
-                        },
-                        {
-                            "id": "29.503",
-                            "name": "Земледелие, растениеводство, животноводство"
-                        }
-                    ],
-                    "company_url": "http://example.com/",
-                    "area": {
-                        "id": "1",
-                        "name": "Москва",
-                        "url": "https://api.hh.ru/areas/1"
-                    },
-                    "company_id": null,
-                    "employer": null
-                },
-                {
-                    "start": "2005-01-01",
-                    "end": "2009-03-01",
-                    "company": "HeadHunter",
-                    "area": {
-                        "id": "1",
-                        "name": "Москва",
-                        "url": "https://api.hh.ru/areas/1"
-                    },
-                    "industries": [
-                        {
-                            "id": "7.513",
-                            "name": "Интернет-компания (поисковики, платежные системы, соц.сети, информационно-познавательные и развлекательные ресурсы, продвижение сайтов и прочее)"
-                        }
-                    ],
-                    "company_url": "https://hh.ru",
-                    "company_id": "1455",
-                    "employer": {
-                        "alternate_url": "https://hh.ru/employer/1455",
-                        "id": "1455",
-                        "logo_urls": {
-                            "90": "https://hh.ru/employer/logo/1455"
-                        },
-                        "name": "HeadHunter",
-                        "url": "https://api.hh.ru/employers/1455"
-                    }
-                }
-            ],
-            "gender": {
-                "id": "male",
-                "name": "Мужской"
-            },
-            "salary": {
-                "amount": 1000000,
-                "currency": "RUR"
-            },
-            "photo": {
-                "medium": "https://hh.ru/...",
-                "small": "https://hh.ru/...",
-                "id": "1337"
-            },
-            "similar_vacancies": {
-                "url": "https://api.hh.ru/resumes/0123456789abcdef/similar_vacancies",
-                "counters": {
-                    "total": 1507
-                }
-            },
-            "download": {
-                "pdf": {
-                    "url": "https://hh.ru/api_resume_converter/0123456789abcdef/ИвановИванИванович.pdf?type=pdf"
-                },
-                "rtf": {
-                    "url": "https://hh.ru/api_resume_converter/0123456789abcdef/ИвановИванИванович.rtf?type=rtf"
-                }
-            }
+            "uid": "7a064a035722 - уникальный id на платформе",
+            "price": "462.00 - Цена",
+            "oldprice": "0.00 - Старая цена",
+            "price_dealer": "415.80 - Оптовая цена",
+            "price_out": "466.62 - Цена на маркетплейсы",
+            "oldprice_out": "0.00 - Старая цена на маркетплейсы",
+            "currency_id": "id валюты (1 = UAH, 2 - USD, 3 - EUR)",
+            "available": "Наличие - целое число. (0 - нет в наличии, 1-9998 колличество, 9999 - производится до 3 дней.",
+            "pay_online": "Безнличный расчет - 0 или 1 (0 нет, 1 да)",
+            "dropshipping": "Дропшиппинг - 0 или 1 (0 нет, 1 да)",
+            "guarantee": "гарантия целое число 12",
+            "terms_of_delivery": "Стоимость доставки цифра от 1 до 20",
+            "category_id": "id категории на вашем сайте",
+            "name": "Полное название товара на платформе",
+            "type": "Тип товара",
+            "brand": "Бренд",
+            "serie": "Серия (Модель) товара",
+            "articul": "Артикул, цвет итд.",
+            "supplier_product_id": "id товара у поставщика",
+            "seller_product_id": "id товара на вашем сайте",
+            "seller_product_name": "Название товара на вашем сайте"
         }
-    ],
-    "page": 0,
-    "per_page": 1,
-    "pages": 1,
-    "found": 1
 }
 ```
 
