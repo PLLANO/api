@@ -28,7 +28,7 @@
 
 ### Тестовые данные
 
-`https://ua.pllano.com/api/v1/json/price/?public_key=test` возвращает тестовый список товаров
+`https://ua.pllano.com/api/v1/json/price/?public_key=test` возвращает список товаров для демонстрации и настройки работы с API с вашей стороны
 
 ## Список товаров
 
