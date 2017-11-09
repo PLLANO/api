@@ -69,8 +69,8 @@
 Имя | По умолчанию | Тип | Описание
 --- | ---- | --- | --------
 api | v1.0 | string | Версия API
-query | GET | string | Дублируем тип запроса  GET, POST, PUT, DELETE
-model | price | string | Модель
+query | null | string | Не обезетельно. Дублируем тип запроса GET, POST, PUT, DELETE. Если значение указано то оно имеет выше приоритет чем в заголовке.
+model | index | string | Модель
 total | 0 | boolean | Колличество найденых товаров
 limit | 10 | boolean | Лимит вывода товаров на страницу.
 offset | 0 | boolean | Страница (смещение)
