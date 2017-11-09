@@ -14,7 +14,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 Установка `PllanoApi` с помощью Composer.
 
 ```
-$ composer require joomimart/csv
+$ composer require pllano/api
 ```
 
 установка с помощью composer.json
