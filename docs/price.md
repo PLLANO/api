@@ -11,6 +11,7 @@
 `Content-Type: application/json`
 
 ### При этом в теле ответа API вернет код ошибки, статус и описание ошибки.
+### [Список ошибок](errors.md)
 
 ```json
 {
@@ -31,7 +32,7 @@
 
 Запрос `GET /api/v1/{format}/price/` возвращает список всех вашиш товаров. 
 
-Без `public_key` вернёт `403 Forbidden`. [причины ошибки](errors.md)
+Без `public_key` вернёт `403 Forbidden`.
 
 ### Ответ
 
