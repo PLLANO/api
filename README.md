@@ -33,7 +33,7 @@ $ composer require pllano/api
 }
 ```
 
-Quickstart example => tests/QuickStart.php
+## Пример работы с библиотекой PllanoApi PHP
 -------
 
 Save the above code fragment as `test.php` in your Web root folder.
