@@ -30,7 +30,7 @@
     "product_id": null,
     "search": null,
     "source": [
-        {
+            {
             "uid": "7a064a035722 - уникальный id на платформе",
             "price": "462.00 - Цена",
             "oldprice": "0.00 - Старая цена",
@@ -52,7 +52,8 @@
             "supplier_product_id": "id товара у поставщика",
             "seller_product_id": "id товара на вашем сайте",
             "seller_product_name": "Название товара на вашем сайте"
-        }
+            }
+              ]
 }
 ```
 
