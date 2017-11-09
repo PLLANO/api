@@ -1,9 +1,10 @@
-# Резюме
+# Товары и Прайс-листы с наличием
 
 * [Список товаров](#list)
 * [Конкретный товар](#item)
   * [Изменяем цену для маркетплейсов](#marketplace-item-edit)
 
+## API - Всегда возвращает код 200 даже при логических ошибках !
 
 <a name="list"></a>
 ## Список товаров
@@ -66,8 +67,11 @@
 Описание полей смотрите в [выдаче полного резюме](#resume-fields).
 Дополнительно ответ содержит:
 
+## Тело запроса
+
 Имя | По умолчанию | Тип | Описание
 --- | ---- | --- | --------
+public_key | test | string | Если пустое или неверное значение - API отдаст ошибку 403 с кодом `200 OK`
 api | v1.0 | string | Версия API
 query | null | string | Не обезетельно. Дублируем тип запроса GET, POST, PUT, DELETE. Если значение указано то оно имеет выше приоритет чем в заголовке.
 model | index | string | Модель
@@ -84,6 +88,26 @@ articul | null | string | Поиск по указанному артикулу 
 brand_id | null | boolean | Товары конкретного бренда
 product_id | null | boolean | id товара
 search | null | string | Полнотекстовый поисковый запрос
+
+```json
+{
+"public_key": "test",
+"query": "GET",
+"model": "price",
+"limit": 10,
+"offset": 0,
+"order": "DESC",
+"sort": "uid",
+"state": 1,
+"type": null,
+"brand": null,
+"serie": null,
+"articul": null,
+"brand_id": null,
+"product_id": null,
+"search": null
+}
+```
 
 <a name="item"></a>
 ## Просмотр товара
