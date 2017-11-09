@@ -8,7 +8,7 @@
 <a name="list"></a>
 ## Список товаров
 
-`GET /api/v1/{format}/price/` возвращает список всех вашиш товаров. Без public_key вернёт `403 Forbidden`.
+`GET /api/v1/{format}/price/` возвращает список всех вашиш товаров. Без `public_key` вернёт `403 Forbidden`.
 `https://ua.pllano.com/api/v1/json/price/?public_key=test` возвращает тестовые данные
 
 ### Ответ
