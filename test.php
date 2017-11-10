@@ -17,8 +17,9 @@
 //ini_set('display_startup_errors', 1);
 
 // Устанавливаем настройки отправки сообщения администратору если API даст ошибку
+$HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
 $to      = 'info@pllano.com';
-$subject = 'PLLANO API';
+$subject = 'PLLANO API на сайте - '.$HTTP_HOST;
 $headers = 'From: admin@pllano.com' . "\r\n" .
     'Reply-To: admin@pllano.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
