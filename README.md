@@ -23,7 +23,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 PllanoApi обратится по адресу 
 
-`https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10` 
+[https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
 
 В ответ получит массив json конвертирует его в массив PHP
 
