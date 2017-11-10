@@ -61,11 +61,14 @@ $ composer require pllano/api
 // PUT /price/42 = Обновить данные конкретной прайс-строки
 // DELETE /price = Удалить все прайс-строки
 // DELETE /price/42 = Удалить конкретную прайс-строку
+
 // Для тех кто может отправлять только с POST и GET запросы мы дублируем тип запроса в параметре $query
 // Если вы в массиве $getArray укажите $query = 'DELETE' и отправите данные в POST запросе $pllanoApi->post($action, $getArray, $uid); данные будут удалены.
+
 //ini_set('error_reporting', E_ALL);
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
+
 // Устанавливаем настройки отправки сообщения администратору если API даст ошибку
 $HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
 $to      = 'info@pllano.com';
