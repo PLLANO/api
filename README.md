@@ -70,8 +70,9 @@ $ composer require pllano/api
 //ini_set('display_startup_errors', 1);
 
 // Устанавливаем настройки отправки сообщения администратору если API даст ошибку
+$HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
 $to      = 'info@pllano.com';
-$subject = 'PLLANO API';
+$subject = 'PLLANO API на сайте - '.$HTTP_HOST;
 $headers = 'From: admin@pllano.com' . "\r\n" .
     'Reply-To: admin@pllano.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
@@ -130,13 +131,13 @@ if ($count >= 1 && $count == $limit) {
 }
 } else {
 // Иначе отправляем письмо администратору если code не равняется 200
-$message = 'PLLANO API - Ошибка - code не равняется 200';
+$message = 'PLLANO API - Ошибка - code не равняется 200 - сайт: '.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
 
 } else {
 // Иначе отправляем письмо администратору если code неопределен
-$message = 'PLLANO API - Ошибка - code неопределен';
+$message = 'PLLANO API - Ошибка - code неопределен - сайт: '.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
 ```
