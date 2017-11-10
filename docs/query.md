@@ -39,17 +39,28 @@
 <a name="test"></a>
 ### Тестовые данные
 
-`https://ua.pllano.com/api/v1/json/price/?public_key=test`
+`https://ua.pllano.com/api/v1/{format}/{model}/?public_key=test`
 
 Возвращает список товаров для демонстрации и настройки работы с API с вашей стороны
 
 <a name="resources"></a>
 ## Список всех ресурсов
 
-URL | Тип | Описание
------ | --- | --------
-/api/v1/{format}/price/ | GET | Список товаров 
-/api/v1/{format}/price/{uid} | GET | Товар с указанным uid
+Логика обращения к API выглядит следующим образом
+
+`https://{country}.pllano.com/api/v1/{format}/{model}/{uid}`
+
+`{country}` - страна по умолчанию ua
+`{format}` - формат json или xlm
+`{model}` - модель к которой обращаемся. Например price или search
+`{uid}` - уникальный индефикатор записи
+
+URL | Тип | Описание | Список запросов
+----- | --- | -------- | ---
+/api/v1/{format}/price/ | GET | Список товаров | 
+/api/v1/{format}/price/{uid} | GET | Товар с указанным uid | 
+/api/v1/{format}/search/ | GET | Список товаров
+/api/v1/{format}/search/{uid} | GET | Товар с указанным uid | 
 
 ### Ошибки
 
