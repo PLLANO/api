@@ -17,7 +17,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "PllanoApi\\Api\\": "src/"
+            "PllanoApi": "src/"
         }
     },
     "extra": {
