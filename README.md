@@ -106,8 +106,9 @@ $ composer require pllano/api
 //ini_set('display_startup_errors', 1);
 
 // Устанавливаем настройки отправки сообщения администратору если API даст ошибку
+// Укажите свои данные
 $HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
-$to      = 'info@pllano.com';
+$to      = 'info@pllano.com'; // Кто отправляет
 $subject = 'Информация от PLLANO REST API на сайте - '.$HTTP_HOST;
 $headers = 'From: admin@pllano.com' . "\r\n" .
     'Reply-To: admin@pllano.com' . "\r\n" .
