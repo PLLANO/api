@@ -104,7 +104,8 @@ $getArray = array(
 	"limit"			=> $limit
 );
 $records = array();
-$records = $pllanoApi->get($getArray, $action, $metod, $uid); // Отправляем GET запрос. В ответ получаем PHP массив с данными.
+// Отправляем GET запрос. В ответ получаем PHP массив с данными.
+$records = $pllanoApi->get($getArray, $action, $metod, $uid); 
 print_r($records); // если PllanoApi не возвращает массив PHP - он вернет описание ошибки
 print_r('<br>');
 if (isset($records['header']['code'])) {
