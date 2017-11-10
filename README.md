@@ -45,7 +45,7 @@ $ composer require pllano/api
 
 ```
 "require": {
-	"pllano/api": "v1.*"
+	"pllano/api": "*"
 }
 ```
 
