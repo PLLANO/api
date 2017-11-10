@@ -75,7 +75,7 @@ PLLANO REST API PHP обратится по адресу:
 -------
  **PHP >= 5.3*
 
-Установка библиотеки PLLANO REST API PHP
+Установка библиотеки PLLANO REST API PHP с помощью Composer
 -------
 
 Установка `PllanoApi` с помощью Composer.
