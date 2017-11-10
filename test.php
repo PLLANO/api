@@ -26,13 +26,13 @@ $headers = 'From: admin@pllano.com' . "\r\n" .
 	
 //	require 'vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
 //	Альтернативные методы подключения библиотеки API
-require_once __DIR__.'/PllanoApi.php';
+require_once __DIR__.'/Api.php';
 //	require_once __DIR__.'/src/PllanoApi.php';
 //	require_once(APPLICATION_PATH . '../vendor/pllano/api/src/PllanoApi.php');
 	
 $country = 'ua'; // Указываем страну. Влияет на формирование URL
 
-$pllanoApi = new PllanoApi($country); // Подключаем PllanoApi
+$pllanoApi = new Pllano\Api($country); // Подключаем PllanoApi
 
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
