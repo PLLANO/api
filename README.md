@@ -20,7 +20,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 ### GET запрос к PLLANO REST API
 
-`https://{country}.pllano.com/api/v1/{format}/{model}/{uid}?public_key={public_key}&order={order}&sort={sort}&offset={offset}&limit={limit}`
+`?public_key={public_key}&order={order}&sort={sort}&offset={offset}&limit={limit}`
 
 `{public_key}` - Ваш ключ PLLANO REST API
 
