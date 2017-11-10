@@ -31,9 +31,9 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 Скачайте файлы [test.php](test.php) и [src/PllanoApi.php](src/PllanoApi.php) положите их в корень вашего сайта.
 
-Запустите: `http://example.com/test.php`
+Запуск: `http://example.com/test.php`
 
-PllanoApi обратится по адресу 
+PLLANO REST API PHP обратится по адресу:
 
 [https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
 
