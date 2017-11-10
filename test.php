@@ -59,6 +59,7 @@ $records = array();
 $records = $pllanoApi->get($getArray, $action, $metod, $uid); // Отправляем GET запрос. В ответ получаем PHP массив с данными.
 
 print_r($records); // если PllanoApi не возвращает массив PHP - он вернет описание ошибки
+print_r('<br>');
 
 if (isset($records['header']['code'])) {
 
@@ -78,12 +79,12 @@ if ($count >= 1 && $count == $limit) {
 }
 } else {
 // Иначе отправляем письмо администратору если code не равняется 200
-$message = 'PLLANO API - Ошибка - code не равняется 200';
+$message = 'PLLANO API - Ошибка - code не равняется 200 - на сайте'.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
 
 } else {
 // Иначе отправляем письмо администратору если code неопределен
-$message = 'PLLANO API - Ошибка - code неопределен';
+$message = 'PLLANO API - Ошибка - code неопределен - на сайте'.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
