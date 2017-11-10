@@ -21,7 +21,11 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 Запустите: `http://example.com/test.php`
 
-PllanoApi обратится по адресу `https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10` и получит в ответ массив json конвертирует его в массив PHP
+PllanoApi обратится по адресу 
+
+`https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10` 
+
+В ответ получит массив json конвертирует его в массив PHP
 
 <a name="composer"></a>
 ### Требования
