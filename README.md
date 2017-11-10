@@ -78,13 +78,11 @@ PLLANO REST API PHP обратится по адресу:
 Установка библиотеки PLLANO REST API PHP с помощью Composer
 -------
 
-Установка `PllanoApi` с помощью Composer.
-
 ```
 $ composer require pllano/api
 ```
 
-установка с помощью composer.json
+composer.json
 
 ``` json
 "require": {
