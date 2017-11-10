@@ -36,10 +36,11 @@ $ composer require pllano/api
 ## Пример работы с библиотекой PllanoApi PHP
 -------
 
+Скачайте файлы [test.php](test.php) и [src/PllanoApi.php](src/PllanoApi.php) положите их в корень вашего сайта.
 
-Скачайте файлы [test.php](test.php) и [src/PllanoApi.php](src/PllanoApi.php) положите их в корень вашего сайта. Запустите: `http://example.com/test.php`
+Запустите: `http://example.com/test.php`
 
-Библиотека обратится по адресу `https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10` и получит в ответ массив json конвертирует его в массив PHP
+PllanoApi обратится по адресу `https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10` и получит в ответ массив json конвертирует его в массив PHP
 
 <a name="feedback"></a>
 ## Поддержка, обратная связь, новости
