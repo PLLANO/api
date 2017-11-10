@@ -24,9 +24,25 @@ PLLANO REST API — это бесплатный инструментарий д�
     "api": "v1.0",
     "query": "GET",
     "model": "price",
-    "status": "404",
-    "code": "404",
-    "message": "404 Not Found"
+    "total": "",
+    "limit": "",
+    "offset": "",
+    "order": "",
+    "sort": "",
+    "state": "",
+    "type": "",
+    "brand": "",
+    "serie": "",
+    "articul": "",
+    "brand_id": "",
+    "product_id": "",
+    "search": "",
+    "header": {
+        "status": "404",
+        "code": "404",
+        "message": "404 Not Found"
+    },
+    "source": []
 }
 ```
 
