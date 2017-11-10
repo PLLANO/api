@@ -19,34 +19,8 @@ PLLANO REST API — это бесплатный инструментарий д�
 `Content-Type: application/json`
 
 ### При этом в теле ответа API вернет код ошибки, статус и описание ошибки.
-#### [Коды ошибок HTTP PLLANO REST API](errors.md)
 
-```json
-{
-    "api": "v1.0",
-    "query": "GET",
-    "model": "price",
-    "total": "",
-    "limit": "",
-    "offset": "",
-    "order": "",
-    "sort": "",
-    "state": "",
-    "type": "",
-    "brand": "",
-    "serie": "",
-    "articul": "",
-    "brand_id": "",
-    "product_id": "",
-    "search": "",
-    "header": {
-        "status": "404",
-        "code": "404",
-        "message": "404 Not Found"
-    },
-    "source": []
-}
-```
+#### [Коды ошибок HTTP PLLANO REST API](errors.md)
 
 <a name="php"></a>
 ## Готовая библиотека на PHP
