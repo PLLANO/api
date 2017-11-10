@@ -134,11 +134,11 @@ $limit = null; // Лимит вывода записей на страницу. 
 // Массив для GET запроса прайс-листов
 $getArray = array(
 	"public_key"	=> $public_key,
-	"query"			=> $query,
-	"order"			=> $order,
-	"sort"			=> $sort,
-	"offset"		=> $offset,
-	"limit"			=> $limit
+	"query"		=> $query,
+	"order"		=> $order,
+	"sort"		=> $sort,
+	"offset"	=> $offset,
+	"limit"		=> $limit
 );
 $records = array();
 // Отправляем GET запрос. В ответ получаем PHP массив с данными.
