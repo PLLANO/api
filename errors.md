@@ -1,12 +1,14 @@
 # Коды ошибок HTTP PLLANO REST API
 
-## PLLANO REST API - Всегда возвращает код 200 даже при логических ошибках !
+## HTTP/1.1 200 OK
+
+### PLLANO REST API - Всегда возвращает код 200 даже при логических ошибках !
 
 `HTTP/1.1 200 OK`
 
 `Content-Type: application/json`
 
-## В теле ответа PLLANO REST API вернет код ошибки, статус и описание ошибки.
+### В теле ответа PLLANO REST API вернет код ошибки, статус и описание ошибки.
 
 ```json
 {
@@ -35,7 +37,7 @@
 }
 ```
 
-## Коды ошибок HTTP которые отдает PLLANO REST API
+### Коды ошибок HTTP которые отдает PLLANO REST API
 
 
 * `200 OK`
