@@ -1,7 +1,7 @@
 {
     "name":"pllano/api",
     "type": "library",
-    "description": "Read very large CSV files in parts",
+    "description": "PLLANO REST API PHP",
     "keywords": ["api", "pllano"],
     "license": "MIT",
 	"homepage": "https://github.com/pllano/api",
