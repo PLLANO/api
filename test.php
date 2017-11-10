@@ -19,7 +19,7 @@
 // Устанавливаем настройки отправки сообщения администратору если API даст ошибку
 $HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
 $to      = 'info@pllano.com';
-$subject = 'PLLANO API на сайте - '.$HTTP_HOST;
+$subject = 'Информация от PLLANO REST API на сайте - '.$HTTP_HOST;
 $headers = 'From: admin@pllano.com' . "\r\n" .
     'Reply-To: admin@pllano.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
@@ -79,12 +79,12 @@ if ($count >= 1 && $count == $limit) {
 }
 } else {
 // Иначе отправляем письмо администратору если code не равняется 200
-$message = 'PLLANO API - Ошибка - ["header"]["code"] не равняется 200 - на сайте: '.$HTTP_HOST;
+$message = 'PLLANO REST API - Ошибка - ["header"]["code"] не равняется 200 - на сайте: '.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
 
 } else {
 // Иначе отправляем письмо администратору если code неопределен
-$message = 'PLLANO API - Ошибка - ["header"]["code"] неопределен - на сайте: '.$HTTP_HOST;
+$message = 'PLLANO REST API - Ошибка - ["header"]["code"] неопределен - на сайте: '.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
