@@ -6,6 +6,18 @@
 
 <a name="list"></a>
 
+### Логика обращения к API
+
+`https://{country}.pllano.com/api/v1/{format}/{model}/{uid}`
+
+`{country}` - страна по умолчанию ua
+
+`{format}` - формат json или xlm
+
+`{model}` - модель к которой обращаемся. Например price или search
+
+`{uid}` - уникальный индефикатор записи
+
 ### Тестовые данные
 
 `https://ua.pllano.com/api/v1/json/price/?public_key=test` возвращает список товаров для демонстрации и настройки работы с API с вашей стороны
