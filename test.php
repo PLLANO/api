@@ -18,7 +18,7 @@
 
 //	require 'vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
 //	Альтернативные методы подключения библиотеки API
-require_once '../pllano.com/library/pllano/api/src/PllanoApi.php';
+require_once __DIR__.'PllanoApi.php'; // В корне директории
 //	require_once __DIR__.'/src/PllanoApi.php';
 //	require_once(APPLICATION_PATH . '../vendor/pllano/api/src/PllanoApi.php');
 	
