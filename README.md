@@ -5,14 +5,27 @@
 PLLANO REST API — это бесплатный инструментарий для интеграции [PLLANO](https://ua.pllano.com/) в ваш продукт.
 
 <a name="general"></a>
-### Прайс-листы интернет-магазинов
+### Документация по работе с PLLANO REST API
 
-* [Список товаров](docs/price.md)
+* [Получить список товаров](docs/price.md)
 * [Просмотр конкретного товара](docs/price.md#item)
 
+<a name="php"></a>
+## Готовая библиотека на PHP
+-------
+Мы разработали готовую библиотеку на PHP для работы с PLLANO REST API
+
+### Пример работы
+-------
+
+Скачайте файлы [test.php](test.php) и [src/PllanoApi.php](src/PllanoApi.php) положите их в корень вашего сайта.
+
+Запустите: `http://example.com/test.php`
+
+PllanoApi обратится по адресу `https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10` и получит в ответ массив json конвертирует его в массив PHP
 
 <a name="composer"></a>
-### Требовани
+### Требования
 -------
  **PHP >= 5.3*
 
@@ -32,15 +45,6 @@ $ composer require pllano/api
 	"pllano/api": "v1.*"
 }
 ```
-
-## Пример работы с библиотекой PllanoApi PHP
--------
-
-Скачайте файлы [test.php](test.php) и [src/PllanoApi.php](src/PllanoApi.php) положите их в корень вашего сайта.
-
-Запустите: `http://example.com/test.php`
-
-PllanoApi обратится по адресу `https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10` и получит в ответ массив json конвертирует его в массив PHP
 
 <a name="feedback"></a>
 ## Поддержка, обратная связь, новости
