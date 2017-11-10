@@ -16,6 +16,13 @@
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 
+// Устанавливаем настройки отправки сообщения администратору если API даст ошибку
+$to      = 'info@pllano.com';
+$subject = 'PLLANO API';
+$headers = 'From: admin@pllano.com' . "\r\n" .
+    'Reply-To: admin@pllano.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+	
 //	require 'vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
 //	Альтернативные методы подключения библиотеки API
 require_once __DIR__.'/PllanoApi.php';
@@ -50,7 +57,11 @@ $getArray = array(
 $records = array();
 $records = $pllanoApi->get($getArray, $action, $metod, $uid); // Отправляем GET запрос. В ответ получаем PHP массив с данными.
 
-//	print_r($records); // если PllanoApi не возвращает массив PHP - он вернет описание ошибки
+print_r($records); // если PllanoApi не возвращает массив PHP - он вернет описание ошибки
+
+if (isset($records['header']['code'])) {
+
+if ($records['header']['code'] == '200') {
 	$total = $records['total']; // Всего товаров
 	$limit = $records['limit']; // Выведено
 	$offset = $records['offset']; // Страница
@@ -63,4 +74,15 @@ if ($count >= 1 && $count == $limit) {
 		print_r($item['uid'].' - '.$item['name'].' - '.$item['price']);
 		print_r('<br>');
 	}
+}
+} else {
+// Иначе отправляем письмо администратору если code не равняется 200
+$message = 'PLLANO API - Ошибка - code не равняется 200';
+mail($to, $subject, $message, $headers);
+}
+
+} else {
+// Иначе отправляем письмо администратору если code неопределен
+$message = 'PLLANO API - Ошибка - code неопределен';
+mail($to, $subject, $message, $headers);
 }
