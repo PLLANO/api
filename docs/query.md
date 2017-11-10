@@ -1,5 +1,31 @@
 # Все ресурсы PLLANO REST API
 
+### Адрес PLLANO REST API
+
+`https://{country}.pllano.com/api/v1/{format}/{model}/{uid}`
+
+`{country}` - страна по умолчанию ua
+
+`{format}` - формат json или xlm
+
+`{model}` - модель к которой обращаемся. Например price или search
+
+`{uid}` - уникальный индефикатор записи
+
+### GET запрос к PLLANO REST API
+
+`?public_key={public_key}&order={order}&sort={sort}&offset={offset}&limit={limit}`
+
+`{public_key}` - Ваш ключ PLLANO REST API
+
+`{limit}` - Записей на страницу. По умолчанию 10
+
+`{offset}` - Страница. По умолчанию 0
+
+`{order}` - Тип сортировки. По умолчанию asc
+
+`{sort}` - Поле сортировки. По умолчанию uid
+
 ### API - Всегда возвращает код 200 даже при логических ошибках !
 
 `HTTP/1.1 200 OK`
@@ -18,19 +44,6 @@
 Возвращает список товаров для демонстрации и настройки работы с API с вашей стороны
 
 <a name="resources"></a>
-## Список всех ресурсов
-
-Логика обращения к API выглядит следующим образом
-
-`https://{country}.pllano.com/api/v1/{format}/{model}/{uid}`
-
-`{country}` - страна по умолчанию ua
-
-`{format}` - формат json или xlm
-
-`{model}` - модель к которой обращаемся. Например price или search
-
-`{uid}` - уникальный индефикатор записи
 
 URL | Тип | Описание | Список запросов
 ----- | --- | -------- | ---
