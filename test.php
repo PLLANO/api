@@ -79,12 +79,12 @@ if ($count >= 1 && $count == $limit) {
 }
 } else {
 // Иначе отправляем письмо администратору если code не равняется 200
-$message = 'PLLANO API - Ошибка - code не равняется 200 - на сайте: '.$HTTP_HOST;
+$message = 'PLLANO API - Ошибка - ["header"]["code"] не равняется 200 - на сайте: '.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
 
 } else {
 // Иначе отправляем письмо администратору если code неопределен
-$message = 'PLLANO API - Ошибка - code неопределен - на сайте: '.$HTTP_HOST;
+$message = 'PLLANO API - Ошибка - ["header"]["code"] неопределен - на сайте: '.$HTTP_HOST;
 mail($to, $subject, $message, $headers);
 }
