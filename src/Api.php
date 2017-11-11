@@ -11,12 +11,12 @@
 *	file that was distributed with this source code.
 */
 
-namespace Pllano;
-
 //	Включить вывод ошибок
-//	ini_set('error_reporting', E_ALL);
-//	ini_set('display_errors', 1);
-//	ini_set('display_startup_errors', 1);
+/* ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1); */
+
+namespace Pllano;
 
 class Api
 {
@@ -85,7 +85,7 @@ private $_country;
 			$output = curl_exec($ch);
 			curl_close($ch);
 		} else {
-			$output = file_get_contents($get);
+			$output = file_get_contents($get_url);
 		}
 		}
 
