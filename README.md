@@ -1,8 +1,12 @@
 # PLLANO REST API
 
-Библиотека и документация по работе с PLLANO REST API
+Документация по работе с PLLANO REST API
 
 PLLANO REST API — это бесплатный инструментарий для интеграции [PLLANO](https://ua.pllano.com/) в ваш продукт.
+
+Вы можете ипользовать популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
+
+Вы можете ипользовать наш PHP HTTP client [PLLANO PHP HTTP client](src/Api.php)
 
 <a name="general"></a>
 
@@ -73,10 +77,6 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 <a name="php"></a>
 ## PHP HTTP client
-
-Вы можете ипользовать популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
-
-Вы можете ипользовать наш PHP HTTP client [PLLANO PHP HTTP client](src/Api.php)
 
 [Пример на PLLANO PHP HTTP client](test.php)
 
