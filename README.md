@@ -76,9 +76,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 	* [Поиск: Конкретный товар](docs/search.md#item)
 
 <a name="php"></a>
-## PHP HTTP client
-
-[Пример на PLLANO PHP HTTP client](test.php)
+## [PLLANO PHP HTTP client](src/Api.phpp)
 
 ### Легкий старт
 
