@@ -92,7 +92,7 @@ PLLANO REST API PHP обратится по адресу:
 
 <a name="composer"></a>
 
- **Установка PLLANO PHP HTTP client с помощью Composer
+ Установка PLLANO PHP HTTP client с помощью Composer
  -------
 
 ### Требования
