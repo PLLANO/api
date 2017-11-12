@@ -122,11 +122,8 @@ $headers = 'From: admin@pllano.com' . "\r\n" .
     'Reply-To: admin@pllano.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 	
-//	require 'vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
-//	Альтернативные методы подключения библиотеки API
+// require '../vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
 require_once __DIR__.'/Api.php';
-//	require_once __DIR__.'/src/Pllano/Api.php';
-//	require_once(APPLICATION_PATH . '../vendor/pllano/api/src/Pllano/Api.php');
 	
 $country = 'ua'; // Указываем страну. Влияет на формирование URL
 $pllanoApi = new Pllano\Api($country); // Подключаем PllanoApi
