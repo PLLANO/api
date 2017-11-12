@@ -91,11 +91,12 @@ PLLANO REST API PHP обратится по адресу:
 В ответ получит массив json конвертирует его в массив PHP
 
 <a name="composer"></a>
-### Установка PLLANO PHP HTTP client с помощью Composer
-
-Требования
 -------
- **PHP >= 5.3*
+ **Установка PLLANO PHP HTTP client с помощью Composer
+
+### Требования
+
+PHP >= 5.3*
 
 ```
 $ composer require pllano/api
