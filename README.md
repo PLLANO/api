@@ -72,15 +72,17 @@ PLLANO REST API — это бесплатный инструментарий д�
 	* [Поиск: Конкретный товар](docs/search.md#item)
 
 <a name="php"></a>
-## Библиотека на PHP
+## PHP HTTP client
 
-Готовая библиотека на PHP для работы с PLLANO REST API
+Вы можете ипользовать популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
 
-[Пример работы: test.php](test.php)
+Вы можете ипользовать наш PHP HTTP client [PLLANO PHP HTTP client](src/Api.php)
+
+[Пример на PLLANO PHP HTTP client](test.php)
 
 ### Легкий старт
 
-Скачайте файлы [test.php](test.php) и [src/PllanoApi.php](src/PllanoApi.php) положите их в корень вашего сайта.
+Скачайте файлы [test.php](test.php) и [src/Api.php](src/Api.php) положите их в корень вашего сайта.
 
 Запуск: `http://example.com/test.php`
 
@@ -95,7 +97,7 @@ PLLANO REST API PHP обратится по адресу:
 -------
  **PHP >= 5.3*
 
-Установка библиотеки PLLANO REST API PHP с помощью Composer
+Установка PLLANO PHP HTTP client с помощью Composer
 -------
 
 ```
