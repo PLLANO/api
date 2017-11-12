@@ -113,8 +113,8 @@ composer.json
 ### Пример использования
 
 ``` php
-// Устанавливаем настройки отправки сообщения администратору если API даст ошибку
-// Укажите свои данные
+//	Устанавливаем настройки отправки сообщения администратору если API даст ошибку
+//	Укажите свои данные
 $HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
 $to      = 'info@pllano.com'; // Кто отправляет
 $subject = 'Информация от PLLANO REST API на сайте - '.$HTTP_HOST;
@@ -122,11 +122,10 @@ $headers = 'From: admin@pllano.com' . "\r\n" .
     'Reply-To: admin@pllano.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 	
-// require '../vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
+//	require '../vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
 require_once __DIR__.'/Api.php';
 	
-$country = 'ua'; // Указываем страну. Влияет на формирование URL
-$pllanoApi = new Pllano\Api($country); // Подключаем PllanoApi
+
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
 $id = null; // Уникальный индефикатор item. Если пусто выводим список.
@@ -136,7 +135,7 @@ $order = null; // Сотрировка asc|desc По умолчанию asc
 $sort = null; // Поле по которому сортируем. По умолчанию uid
 $offset = null; // Смещение. Начать с указанной. По умолчанию 0
 $limit = null; // Лимит вывода записей на страницу. По умолчанию 10
-// Массив для GET запроса прайс-листов
+//	Массив для GET запроса прайс-листов
 $getArray = array(
 	"public_key"	=> $public_key,
 	"query"		=> $query,
@@ -146,10 +145,14 @@ $getArray = array(
 	"limit"		=> $limit
 );
 $records = array();
-// Отправляем GET запрос. В ответ получаем PHP массив с данными.
-$records = $pllanoApi->get($getArray, $action, $metod, $uid); 
-print_r($records); // если PllanoApi не возвращает массив PHP - он вернет описание ошибки
-print_r('<br>');
+
+$country = 'ua'; // Указываем страну. Влияет на формирование URL
+
+$api = new Pllano\Api($country); // Подключаем Pllano\Api
+$records = $api->get($getArray, $action, $metod, $uid); // Отправляем GET запрос. В ответ получаем PHP массив с данными.
+
+//	print_r($records); // если Api не возвращает массив PHP - он вернет описание ошибки
+
 if (isset($records['header']['code'])) {
 if ($records['header']['code'] == '200') {
 	$total = $records['total']; // Всего товаров
