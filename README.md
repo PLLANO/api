@@ -181,7 +181,7 @@ mail($to, $subject, $message, $headers);
 
 Общайтесь с нами через почту api@pllano.com
 
-Если вы нашли баг в работе PLLANO REST API загляните в
+Если вы нашли баг в работе PLLANO REST API или PLLANO PHP HTTP client загляните в
 [issues](https://github.com/pllano/api/issues), возможно, про него мы уже знаем и
 чиним. Если нет, лучше всего сообщить о нём там. Там же вы можете оставлять свои
 пожелания и предложения.
