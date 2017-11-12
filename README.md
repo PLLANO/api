@@ -2,7 +2,7 @@
 
 Документация по работе с PLLANO REST API
 
-PLLANO REST API — это бесплатный инструментарий для интеграции [PLLANO](https://ua.pllano.com/) в ваш продукт.
+PLLANO REST API — это бесплатный инструментарий для интеграции [pllano.com](https://pllano.com/) в ваш продукт.
 
 Вы можете ипользовать популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
 
