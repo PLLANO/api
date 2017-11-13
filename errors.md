@@ -46,6 +46,45 @@
     }
 }
 ```
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<price>
+    <date>2017-11-01 12:59:59</date>
+    <header>
+        <status>200 OK</status>
+        <code>200</code>
+        <message>OK</message>
+    </header>
+    <response>
+        <platform>pllano.com</platform>
+        <api>v1.0</api>
+        <date>2017-11-13 04:51:18</date>
+        <encoding>utf-8</encoding>
+        <total>26</total>
+    </response>
+    <request>
+        <query>GET</query>
+        <model>price</model>
+        <limit>10</limit>
+        <offset>0</offset>
+        <order>DESC</order>
+        <sort>id</sort>
+        <state>1</state>
+        <type></type>
+        <brand></brand>
+        <serie></serie>
+        <articul></articul>
+        <brand_id></brand_id>
+        <product_id></product_id>
+        <search></search>
+    </request>
+    <items>
+        <item>
+        // тело 
+        </item>
+    </items>
+</price>
+```
 
 ### Коды ошибок HTTP которые отдает PLLANO REST API
 
