@@ -150,7 +150,9 @@ $records = array();
 $country = 'ua'; // Указываем страну. Влияет на формирование URL
 
 $api = new Pllano\Api($country); // Подключаем Pllano\Api
-$records = $api->get($getArray, $action, $metod, $uid); // Отправляем GET запрос. В ответ получаем PHP массив с данными.
+
+// Отправляем GET запрос. В ответ получаем PHP массив с данными.
+$records = $api->get($getArray, $action, $metod, $uid); 
 
 //	print_r($records); // если Api не возвращает массив PHP - он вернет описание ошибки
 
