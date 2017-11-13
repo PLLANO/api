@@ -99,7 +99,56 @@ PLLANO REST API — это бесплатный инструментарий д�
     "price": {
         "items": [
             {
-                "item": {}
+                "item": {
+                    "id": "",
+                    "product_id": "",
+                    "parent_id": "",
+                    "brand_id": "",
+                    "price": "",
+                    "oldprice": "",
+                    "available": "",
+                    "guarantee": "",
+                    "ean": "",
+                    "category": {
+                        "id": "",
+                        "parent_id": "",
+                        "name": "",
+                        "alias": ""
+                    },
+                    "supplier": {
+                        "id": "82616",
+                        "dropshipping": "",
+                        "pay_online": ""
+                    },
+                    "seller": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "delivery": {
+                        "terms": ""
+                    },
+                    "currency": {
+                        "currency_id": "UAH",
+                        "short_sign": "₴",
+                        "name": "грн.",
+                        "currency_name": "грн."
+                    },
+                    "name": "",
+                    "type": "",
+                    "brand": "",
+                    "serie": "",
+                    "articul": "",
+                    "url": "",
+                    "image": {
+                        "1": "",
+                        "2": ""
+                    },
+                    "description": "-",
+                    "param": {
+                        "Гарантия": "12 месяцев",
+                        "Страна производитель": "Украина"
+                    }
+		}
             }
          ]
     }
@@ -147,10 +196,10 @@ PLLANO REST API — это бесплатный инструментарий д�
 	    <id></id>
             <product_id></product_id>
             <parent_id></parent_id>
-            <price>75.00</price>
-            <oldprice>100.00</oldprice>
-            <available>1</available>
-            <guarantee>12</guarantee>
+            <price></price>
+            <oldprice></oldprice>
+            <available></available>
+            <guarantee></guarantee>
             <ean>0</ean>
             <category>
                 <categoryId></categoryId>
@@ -159,9 +208,9 @@ PLLANO REST API — это бесплатный инструментарий д�
                 <alias></alias>
             </category>
             <supplier>
-                <id>82616</id>
-                <dropshipping>0</dropshipping>
-                <pay_online>0</pay_online>
+                <id></id>
+                <dropshipping></dropshipping>
+                <pay_online></pay_online>
             </supplier>
             <seller>
                 <id>0</id>
