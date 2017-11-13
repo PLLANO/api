@@ -144,7 +144,52 @@ PLLANO REST API — это бесплатный инструментарий д�
     </request>
     <items>
         <item>
-
+	    <id></id>
+            <product_id></product_id>
+            <parent_id></parent_id>
+            <price>75.00</price>
+            <oldprice>100.00</oldprice>
+            <available>1</available>
+            <guarantee>12</guarantee>
+            <ean>0</ean>
+            <category>
+                <categoryId></categoryId>
+                <parentId></parentId>
+                <name></name>
+                <alias></alias>
+            </category>
+            <supplier>
+                <id>82616</id>
+                <dropshipping>0</dropshipping>
+                <pay_online>0</pay_online>
+            </supplier>
+            <seller>
+                <id>0</id>
+                <name></name>
+            </seller>
+            <delivery>
+                <terms>Бесплатная по Украине.</terms>
+            </delivery>
+            <currency>
+                <currency_id>UAH</currency_id>
+                <short_sign>₴</short_sign>
+                <currency_name>грн.</currency_name>
+            </currency>
+            <name></name>
+            <type></type>
+            <brand brand_id=""></brand>
+            <vendor vendor_id=""></vendor>
+            <serie></serie>
+            <articul></articul>
+            <url></url>
+            <images>
+	        <image sort="1"></image>
+                <image sort="2"></image>
+            </images>
+            <description>
+	    </description>
+            <param name=""></param>
+            <param name=""></param>
         </item>
     </items>
 </price>
