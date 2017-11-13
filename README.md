@@ -111,22 +111,12 @@ composer.json
 }
 ```
 <a name="test"></a>
-### Пример использования
+### Примеры использования
 
-``` php
-//	Устанавливаем настройки отправки сообщения администратору если API даст ошибку
-//	Укажите свои данные
-$HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
-$to      = 'info@pllano.com'; // Кто отправляет
-$subject = 'Информация от PLLANO REST API на сайте - '.$HTTP_HOST;
-$headers = 'From: admin@pllano.com' . "\r\n" .
-    'Reply-To: admin@pllano.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+``` php	
+require '../vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
+//require_once __DIR__.'/Api.php';
 	
-//	require '../vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
-require_once __DIR__.'/Api.php';
-	
-
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
 $id = null; // Уникальный индефикатор item. Если пусто выводим список.
@@ -136,6 +126,7 @@ $order = null; // Сотрировка asc|desc По умолчанию asc
 $sort = null; // Поле по которому сортируем. По умолчанию uid
 $offset = null; // Смещение. Начать с указанной. По умолчанию 0
 $limit = null; // Лимит вывода записей на страницу. По умолчанию 10
+
 //	Массив для GET запроса прайс-листов
 $getArray = array(
 	"public_key"	=> $public_key,
@@ -145,41 +136,33 @@ $getArray = array(
 	"offset"	=> $offset,
 	"limit"		=> $limit
 );
+
 $records = array();
-
 $country = 'ua'; // Указываем страну. Влияет на формирование URL
-
 $api = new Pllano\Api($country); // Подключаем Pllano\Api
-
 // Отправляем GET запрос. В ответ получаем PHP массив с данными.
 $records = $api->get($getArray, $action, $metod, $uid); 
 
-//	print_r($records); // если Api не возвращает массив PHP - он вернет описание ошибки
+//print_r($records); // если Api не возвращает массив PHP - он вернет описание ошибки
 
 if (isset($records['header']['code'])) {
-if ($records['header']['code'] == '200') {
-	$total = $records['total']; // Всего товаров
-	$limit = $records['limit']; // Выведено
-	$offset = $records['offset']; // Страница
+	if ($records['header']['code'] == '200') {
 	
-$count = count($records['source']);
-if ($count >= 1 && $count == $limit) {
-	foreach($records['source'] as $item)
-	{
-		print_r($item['uid'].' - '.$item['name'].' - '.$item['price']);
-		print_r('<br>');
+	$total = $records['response']['total']; // Всего товаров
+	$recordslimit = $records['request']['limit']; // Выведено
+	$offset = $records['request']['offset']; // Страница
+	
+	$count = count($records['price']['items']);
+		if ($count >= 1 && $count == $recordslimit) {
+			foreach($records['price']['items'] as $item)
+			{
+				print_r($item['item']['id'].' - '.$item['item']['name'].' - '.$item['item']['price']);
+				print_r('<br>');
+			}
+		}
+
 	}
-}
-} else {
-//	Иначе отправляем письмо администратору если ["header"]["code"] не равняется 200
-$message = 'PLLANO REST API - Ошибка - ["header"]["code"] не равняется 200 - на сайте: '.$HTTP_HOST;
-mail($to, $subject, $message, $headers);
-}
-} else {
-//	Иначе отправляем письмо администратору если ["header"]["code"] неопределен
-$message = 'PLLANO REST API - Ошибка - ["header"]["code"] неопределен - на сайте: '.$HTTP_HOST;
-mail($to, $subject, $message, $headers);
-}
+} 
 ```
 
 <a name="feedback"></a>
