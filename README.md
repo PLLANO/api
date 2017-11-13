@@ -161,6 +161,7 @@ if (isset($records['header']['code'])) {
 				print_r($item['item']['name']);
 				print_r('<br>');
 				print_r($item['item']['price']);
+				print_r('<br>');
 			}
 		}
 
