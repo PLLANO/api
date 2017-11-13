@@ -80,7 +80,7 @@
     </request>
     <items>
         <item>
-        // тело 
+
         </item>
     </items>
 </price>
