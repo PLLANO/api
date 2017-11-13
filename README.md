@@ -144,7 +144,6 @@ $records = $api->get($getArray, $action, $metod, $id);
 
 if (isset($records['header']['code'])) {
 if ($records['header']['code'] == '200') {
-	
 	$count = count($records['price']['items']);
 	if ($count >= 1) {
 		foreach($records['price']['items'] as $item)
@@ -152,7 +151,6 @@ if ($records['header']['code'] == '200') {
 			print_r($item['item']['id']);
 		}
 	}
-
 }
 } 
 ```
@@ -175,7 +173,6 @@ $records = json_decode($output, true);
 
 if (isset($records['header']['code'])) {
 if ($records['header']['code'] == '200') {
-	
 	$count = count($records['price']['items']);
 	if ($count >= 1) {
 		foreach($records['price']['items'] as $item)
@@ -183,7 +180,6 @@ if ($records['header']['code'] == '200') {
 			print_r($item['item']['id']);
 		}
 	}
-
 }
 }
 ```
