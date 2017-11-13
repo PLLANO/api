@@ -146,26 +146,27 @@ $records = $api->get($getArray, $action, $metod, $uid);
 //print_r($records); // если Api не возвращает массив PHP - он вернет описание ошибки
 
 if (isset($records['header']['code'])) {
-	if ($records['header']['code'] == '200') {
+if ($records['header']['code'] == '200') {
 	
 	$total = $records['response']['total']; // Всего товаров
 	$recordslimit = $records['request']['limit']; // Выведено
 	$offset = $records['request']['offset']; // Страница
 	
 	$count = count($records['price']['items']);
-		if ($count >= 1 && $count == $recordslimit) {
-			foreach($records['price']['items'] as $item)
-			{
-				print_r($item['item']['id']);
-				print_r('<br>');
-				print_r($item['item']['name']);
-				print_r('<br>');
-				print_r($item['item']['price']);
-				print_r('<br>');
-			}
+	
+	if ($count >= 1 && $count == $recordslimit) {
+		foreach($records['price']['items'] as $item)
+		{
+			print_r($item['item']['id']);
+			print_r('<br>');
+			print_r($item['item']['name']);
+			print_r('<br>');
+			print_r($item['item']['price']);
+			print_r('<br>');
 		}
-
 	}
+
+}
 } 
 ```
 
