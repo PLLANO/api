@@ -156,8 +156,11 @@ if (isset($records['header']['code'])) {
 		if ($count >= 1 && $count == $recordslimit) {
 			foreach($records['price']['items'] as $item)
 			{
-				print_r($item['item']['id'].' - '.$item['item']['name'].' - '.$item['item']['price']);
+				print_r($item['item']['id']);
 				print_r('<br>');
+				print_r($item['item']['name']);
+				print_r('<br>');
+				print_r($item['item']['price']);
 			}
 		}
 
