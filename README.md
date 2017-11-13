@@ -171,7 +171,7 @@ $client = new \GuzzleHttp\Client();
 $response = $client->request('GET', 'https://ua.pllano.com/api/v1/json/price/?public_key=test');
 $output = $response->getBody();
 
-// Чистим все что не нужно
+// Чистим все что не нужно, иначе json_decode не сможет конвертировать json в массив
 for ($i = 0; $i <= 31; ++$i) {$output = str_replace(chr($i), "", $output);}
 $output = str_replace(chr(127), "", $output);
 if (0 === strpos(bin2hex($output), 'efbbbf')) {$output = substr($output, 3);}
