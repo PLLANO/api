@@ -234,12 +234,9 @@ PLLANO REST API — это бесплатный инструментарий д�
 	        <image sort="1"></image>
                 <image sort="2"></image>
             </images>
-            <description>
-	    </description>
-	    <params>
+            <description>Описание</description>
             	<param name=""></param>
             	<param name=""></param>
-	    <params>
         </item>
     </items>
 </price>
