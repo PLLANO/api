@@ -111,10 +111,11 @@ composer.json
 }
 ```
 <a name="test"></a>
-### Пример использования
+### Пример использования PLLANO PHP HTTP client
 
 ``` php	
-require '../vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
+require '../vendor/autoload.php'; // Подключить Composer
+
 //require_once __DIR__.'/Api.php';
 	
 $action = 'price'; // Название модели к которой мы обращаемся
@@ -154,6 +155,37 @@ if ($records['header']['code'] == '200') {
 
 }
 } 
+```
+
+### Пример использования Guzzle
+
+``` php	
+require '../vendor/autoload.php'; // Подключить Composer
+
+$client = new \GuzzleHttp\Client();
+$response = $client->request('GET', 'https://ua.pllano.com/api/v1/json/price/?public_key=test');
+$output = $response->getBody();
+
+// Чистим все что не нужно
+for ($i = 0; $i <= 31; ++$i) {$output = str_replace(chr($i), "", $output);}
+$output = str_replace(chr(127), "", $output);
+if (0 === strpos(bin2hex($output), 'efbbbf')) {$output = substr($output, 3);}
+
+$records = json_decode($output, true);
+
+if (isset($records['header']['code'])) {
+if ($records['header']['code'] == '200') {
+	
+	$count = count($records['price']['items']);
+	if ($count >= 1) {
+		foreach($records['price']['items'] as $item)
+		{
+			print_r($item['item']['id']);
+		}
+	}
+
+}
+}
 ```
 
 <a name="feedback"></a>
