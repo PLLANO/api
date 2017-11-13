@@ -131,7 +131,6 @@ PLLANO REST API — это бесплатный инструментарий д�
                         "currency_id": "UAH",
                         "short_sign": "₴",
                         "name": "грн.",
-                        "currency_name": "грн."
                     },
                     "name": "",
                     "type": "",
