@@ -1,91 +1,39 @@
 <?php
-// Мы потдерживаем работу с следующими запросами: 
-// POST /price = Создание записи 
-// POST /price/42 = Ошибка
-// GET /price = Список прайс-строк
-// GET /price/42 = Данные конкретной прайс-строки
-// PUT /price = Обновить данные прайс-строк
-// PUT /price/42 = Обновить данные конкретной прайс-строки
-// DELETE /price = Удалить все прайс-строки
-// DELETE /price/42 = Удалить конкретную прайс-строку
-
-// Для тех кто может отправлять только с POST и GET запросы мы дублируем тип запроса в параметре $query
-// Если вы в массиве $getArray укажите $query = 'DELETE' и отправите данные в POST запросе $pllanoApi->post($action, $getArray, $uid); данные будут удалены.
-
-//ini_set('error_reporting', E_ALL);
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-
-// Устанавливаем настройки отправки сообщения администратору если API даст ошибку
-$HTTP_HOST = $_SERVER['HTTP_HOST']; // Получаем хост
-$to      = 'info@pllano.com';
-$subject = 'Информация от PLLANO REST API на сайте - '.$HTTP_HOST;
-$headers = 'From: admin@pllano.com' . "\r\n" .
-    'Reply-To: admin@pllano.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-	
-//	require 'vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
-//	Альтернативные методы подключения библиотеки API
+//	require '../vendor/autoload.php'; // Подключить Composer
 require_once __DIR__.'/Api.php';
-//	require_once __DIR__.'/src/PllanoApi.php';
-//	require_once(APPLICATION_PATH . '../vendor/pllano/api/src/PllanoApi.php');
-	
-$country = 'ua'; // Указываем страну. Влияет на формирование URL
-
-$pllanoApi = new Pllano\Api($country); // Подключаем PllanoApi
 
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
-$uid = null; // Уникальный индефикатор для обращения к конкретной записи (Например по конкретному заказу). Если пусто выводим список.
+$id = null; // Уникальный индефикатор item. Если null выводим список.
 
-$public_key = 'test'; // Публичный ключ авторизации. Сгенерировать в настройках API каждого магазина. По умолчанию test для настройки API
+$public_key = 'test'; // Публичный ключ авторизации. По умолчанию test для настройки API
 $query = null; // Дублируем тип запроса. Имеет приоритет выше чем в самом запросе.
 $order = null; // Сотрировка asc|desc По умолчанию asc
-$sort = null; // Поле по которому сортируем. По умолчанию uid
-$offset = null; // Смещение. Начать с указанной. По умолчанию 0
+$sort = null; // Поле по которому сортируем. По умолчанию id
+$offset = null; // Смещение. Начать с указанной страницы. По умолчанию 0
 $limit = null; // Лимит вывода записей на страницу. По умолчанию 10
 
-// Массив для GET запроса прайс-листов
+//Массив для GET запроса
 $getArray = array(
 	"public_key"	=> $public_key,
-	"query"			=> $query,
-	"order"			=> $order,
-	"sort"			=> $sort,
-	"offset"		=> $offset,
-	"limit"			=> $limit
+	"query"		=> $query,
+	"order"		=> $order,
+	"sort"		=> $sort,
+	"offset"	=> $offset,
+	"limit"		=> $limit
 );
 
-$records = array();
-// Отправляем GET запрос. В ответ получаем PHP массив с данными.
-$records = $pllanoApi->get($getArray, $action, $metod, $uid); 
-
-print_r($records); // если PllanoApi не возвращает массив PHP - он вернет описание ошибки
-print_r('<br>');
+$api = new Pllano\Api('ua');
+$records = $api->get($getArray, $action, $metod, $id);
 
 if (isset($records['header']['code'])) {
-
 if ($records['header']['code'] == '200') {
-	$total = $records['total']; // Всего товаров
-	$limit = $records['limit']; // Выведено
-	$offset = $records['offset']; // Страница
-	
-$count = count($records['source']);
-if ($count >= 1 && $count == $limit) {
-
-	foreach($records['source'] as $item)
-	{
-		print_r($item['uid'].' - '.$item['name'].' - '.$item['price']);
-		print_r('<br>');
+	$count = count($records['price']['items']);
+	if ($count >= 1) {
+		foreach($records['price']['items'] as $item)
+		{
+			print_r($item['item']['id']);
+		}
 	}
 }
-} else {
-// Иначе отправляем письмо администратору если ["header"]["code"] не равняется 200
-$message = 'PLLANO REST API - Ошибка - ["header"]["code"] не равняется 200 - на сайте: '.$HTTP_HOST;
-mail($to, $subject, $message, $headers);
-}
-
-} else {
-// Иначе отправляем письмо администратору если ["header"]["code"] неопределен
-$message = 'PLLANO REST API - Ошибка - ["header"]["code"] неопределен - на сайте: '.$HTTP_HOST;
-mail($to, $subject, $message, $headers);
-}
+} 
