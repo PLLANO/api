@@ -68,6 +68,84 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 [Коды ошибок HTTP](errors.md)
 
+### Структура json
+```json
+{
+    "header": {
+        "status": "200 OK",
+        "code": "200",
+        "message": "OK"
+    },
+    "response": {
+        "api": "v1.0",
+        "total": "1000"
+    },
+    "request": {
+        "query": "GET",
+        "model": "price",
+        "limit": "10",
+        "offset": "0",
+        "order": "DESC",
+        "sort": "id",
+        "state": "1",
+        "type": "",
+        "brand": "",
+        "serie": "",
+        "articul": "",
+        "brand_id": "",
+        "product_id": "",
+        "search": ""
+    },
+    "price": {
+        "items": [
+            {
+                "item": {}
+            }
+         ]
+    }
+}
+```
+### Структура xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<price>
+    <date>2017-11-01 12:59:59</date>
+    <header>
+        <status>200 OK</status>
+        <code>200</code>
+        <message>OK</message>
+    </header>
+    <response>
+        <platform>pllano.com</platform>
+        <api>v1.0</api>
+        <date>2017-11-13 04:51:18</date>
+        <encoding>utf-8</encoding>
+        <total>26</total>
+    </response>
+    <request>
+        <query>GET</query>
+        <model>price</model>
+        <limit>10</limit>
+        <offset>0</offset>
+        <order>DESC</order>
+        <sort>id</sort>
+        <state>1</state>
+        <type></type>
+        <brand></brand>
+        <serie></serie>
+        <articul></articul>
+        <brand_id></brand_id>
+        <product_id></product_id>
+        <search></search>
+    </request>
+    <items>
+        <item>
+
+        </item>
+    </items>
+</price>
+```
+
 ### Документация по работе с PLLANO REST API
 * [Список всех ресурсов PLLANO REST API](docs/query.md)
 	* [Прайс-листы: Получить список товаров](docs/price.md)
