@@ -6,7 +6,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 Вы можете ипользовать популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
 
-Вы можете ипользовать наш PHP HTTP client [PLLANO PHP HTTP client](src/Api.php)
+Вы можете ипользовать наш [PLLANO PHP HTTP client](src/Api.php)
 
 <a name="general"></a>
 
