@@ -115,8 +115,7 @@ composer.json
 
 ``` php	
 require '../vendor/autoload.php'; // Подключить Composer
-
-//require_once __DIR__.'/Api.php';
+//	require_once __DIR__.'/Api.php';
 	
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
