@@ -120,6 +120,7 @@ require '../vendor/autoload.php'; // Подключить через Composer �
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
 $id = null; // Уникальный индефикатор item. Если пусто выводим список.
+
 $public_key = 'test'; // Публичный ключ авторизации. По умолчанию test для настройки API
 $query = null; // Дублируем тип запроса. Имеет приоритет выше чем в самом запросе.
 $order = null; // Сотрировка asc|desc По умолчанию asc
@@ -127,7 +128,7 @@ $sort = null; // Поле по которому сортируем. По умо�
 $offset = null; // Смещение. Начать с указанной. По умолчанию 0
 $limit = null; // Лимит вывода записей на страницу. По умолчанию 10
 
-//	Массив для GET запроса прайс-листов
+//Массив для GET запроса
 $getArray = array(
 	"public_key"	=> $public_key,
 	"query"		=> $query,
@@ -137,24 +138,14 @@ $getArray = array(
 	"limit"		=> $limit
 );
 
-$records = array();
-$country = 'ua'; // Указываем страну. Влияет на формирование URL
-$api = new Pllano\Api($country); // Подключаем Pllano\Api
-// Отправляем GET запрос. В ответ получаем PHP массив с данными.
-$records = $api->get($getArray, $action, $metod, $uid); 
-
-//print_r($records); // если Api не возвращает массив PHP - он вернет описание ошибки
+$api = new Pllano\Api('ua');
+$records = $api->get($getArray, $action, $metod, $id);
 
 if (isset($records['header']['code'])) {
 if ($records['header']['code'] == '200') {
 	
-	$total = $records['response']['total']; // Всего товаров
-	$recordslimit = $records['request']['limit']; // Выведено
-	$offset = $records['request']['offset']; // Страница
-	
-	$count = count($records['price']['items']);
-	
-	if ($count >= 1 && $count == $recordslimit) {
+	$count = count($records['price']['items']); // Выведено записей
+	if ($count >= 1) {
 		foreach($records['price']['items'] as $item)
 		{
 			print_r($item['item']['id']);
