@@ -102,9 +102,7 @@ PHP >= 5.3*
 ```
 $ composer require pllano/api
 ```
-
 composer.json
-
 ``` json
 "require": {
 	"pllano/api": "*"
@@ -155,6 +153,16 @@ if ($records['header']['code'] == '200') {
 ```
 
 ### Пример использования Guzzle
+
+```
+$ composer require guzzlehttp/guzzle
+```
+composer.json
+``` json
+"require": {
+	"guzzlehttp/guzzle": "^6.3"
+}
+```
 
 ``` php	
 require '../vendor/autoload.php'; // Подключить Composer
