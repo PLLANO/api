@@ -111,7 +111,7 @@ composer.json
 }
 ```
 <a name="test"></a>
-### Примеры использования
+### Пример использования
 
 ``` php	
 require '../vendor/autoload.php'; // Подключить через Composer — менеджер зависимостей для PHP
