@@ -280,7 +280,7 @@ $ composer require pllano/api
 composer.json
 ``` json
 "require": {
-	"pllano/api": "*"
+	"pllano/api": "1.0.3"
 }
 ```
 <a name="test"></a>
