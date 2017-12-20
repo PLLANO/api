@@ -22,29 +22,29 @@ PLLANO REST API — это бесплатный инструментарий д�
 - `DELETE /price` Удалить все прайс-строки
 - `DELETE /price/42` Удалить конкретную прайс-строку
 
-Для тех кто может отправлять только с `POST` и `GET` запросы мы дублируем тип запроса в параметре `query`
-
 ### URL PLLANO REST API
 - `https://{country}.pllano.com/api/v1/{format}/{resource}/{uid}`
 - `{country}` - страна по умолчанию ua
 - `{format}` - формат json или xlm
-- `{resource}` - ресурс к которому обращаемся. Например `price` или `search`. [Список всех ресурсов PLLANO REST API](https://github.com/pllano/APIS-2018)
+- `{resource}` - ресурс к которому обращаемся. Например `price` или `search` - [Список всех ресурсов PLLANO REST API](https://github.com/pllano/APIS-2018)
 - `{id}` - уникальный индефикатор
 ### GET запрос к PLLANO REST API
 - `?public_key={public_key}&order={order}&sort={sort}&offset={offset}&limit={limit}`
-- `{public_key}` - Ваш ключ PLLANO REST API
+- `{public_key}` - Ваш ключ к API
 - `{limit}` - Записей на страницу. По умолчанию 10
 - `{offset}` - Страница. По умолчанию 0
-- `{order}` - Тип сортировки. По умолчанию asc
-- `{sort}` - Поле сортировки. По умолчанию uid
+- `{order}` - Тип сортировки. По умолчанию ASC
+- `{sort}` - Поле сортировки. По умолчанию id
 [Список всех параметров запроса](https://github.com/pllano/APIS-2018)
+
+### [Список всех ресурсов PLLANO RESTful API](https://github.com/pllano/APIS-2018)
 
 ### PLLANO REST API - Всегда возвращает код 200 даже при логических ошибках !
 `HTTP/1.1 200 OK`
 
 `Content-Type: application/json`
 
-### В теле ответа API вернет код ошибки, статус и описание ошибки.
+### В теле ответа API вернет состояния HTTP или код ошибки.
 [Коды состояния HTTP](https://github.com/pllano/APIS-2018/tree/master/http-codes)
 
 ### Структура json
@@ -131,102 +131,6 @@ PLLANO REST API — это бесплатный инструментарий д�
     }
 }
 ```
-### Структура xml
-
-Структура xml очень сильно напоминает стандартные xml для выгрузки на торговые площадки, 
-за исключением того что содержит свои блоки: header, response, request
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<body>
-    <date>2017-11-01 12:59:59</date>
-    <header>
-        <status>200 OK</status>
-        <code>200</code>
-        <message>OK</message>
-    </header>
-    <response>
-        <platform>pllano.com</platform>
-        <api>v1.0</api>
-        <date>2017-11-13 04:51:18</date>
-        <encoding>utf-8</encoding>
-        <total>26</total>
-    </response>
-    <request>
-        <query>GET</query>
-        <model>price</model>
-        <limit>10</limit>
-        <offset>0</offset>
-        <order>DESC</order>
-        <sort>id</sort>
-        <state>1</state>
-        <type></type>
-        <brand></brand>
-        <serie></serie>
-        <articul></articul>
-        <brand_id></brand_id>
-        <product_id></product_id>
-        <search></search>
-    </request>
-    <items>
-        <item>
-	    <id></id>
-            <product_id></product_id>
-            <parent_id></parent_id>
-            <price></price>
-            <oldprice></oldprice>
-            <available></available>
-            <guarantee></guarantee>
-            <ean>0</ean>
-            <category>
-                <categoryId></categoryId>
-                <parentId></parentId>
-                <name></name>
-                <alias></alias>
-            </category>
-            <supplier>
-                <id></id>
-                <dropshipping></dropshipping>
-                <pay_online></pay_online>
-            </supplier>
-            <seller>
-                <id>0</id>
-                <name></name>
-            </seller>
-            <delivery>
-                <terms>Бесплатная по Украине.</terms>
-            </delivery>
-            <currency>
-                <currency_id>UAH</currency_id>
-                <short_sign>₴</short_sign>
-                <currency_name>грн.</currency_name>
-            </currency>
-            <name></name>
-            <type></type>
-            <brand brand_id=""></brand>
-            <vendor vendor_id=""></vendor>
-            <serie></serie>
-            <articul></articul>
-            <url></url>
-            <images>
-	        <image sort="1"></image>
-                <image sort="2"></image>
-            </images>
-            <description>Описание</description>
-            	<param name=""></param>
-            	<param name=""></param>
-        </item>
-    </items>
-</body>
-```
-
-
-### Документация по работе с PLLANO REST API
-* [Список всех ресурсов PLLANO REST API](docs/query.md)
-	* [Прайс-листы: Получить список товаров](docs/price.md)
-	* [Прайс-листы: Конкретный товар](docs/price.md#item)
-	* [Поиск: Получить список товаров](docs/search.md)
-	* [Поиск: Конкретный товар](docs/search.md#item)
 
 <a name="php"></a>
 ## [PLLANO PHP HTTP client](src/Api.php)
