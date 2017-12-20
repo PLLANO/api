@@ -34,7 +34,6 @@ PLLANO RESTful API — это бесплатный инструментарий 
 - `{offset}` - Страница. По умолчанию 0
 - `{order}` - Тип сортировки. По умолчанию ASC
 - `{sort}` - Поле сортировки. По умолчанию id
-[Список всех параметров запроса](https://github.com/pllano/APIS-2018)
 
 ### [Список всех ресурсов PLLANO API](https://github.com/pllano/APIS-2018)
 
