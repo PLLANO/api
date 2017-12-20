@@ -66,15 +66,16 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 ### В теле ответа API вернет код ошибки, статус и описание ошибки.
 
-[Коды ошибок HTTP](errors.md)
+[Коды состояния HTTP](https://github.com/pllano/APIS-2018/tree/master/http-codes)
 
 ### Структура json
 ```json
 {
-    "header": {
+    "headers": {
         "status": "200 OK",
         "code": "200",
-        "message": "OK"
+        "message": "OK",
+	"message_id": "https:\/\/github.com\/pllano\/APIS-2018\/tree\/master\/http-codes\/200.md"
     },
     "response": {
         "api": "v1.0",
@@ -96,7 +97,7 @@ PLLANO REST API — это бесплатный инструментарий д�
         "product_id": "",
         "search": ""
     },
-    "price": {
+    "body": {
         "items": [
             {
                 "item": {
@@ -160,7 +161,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<price>
+<body>
     <date>2017-11-01 12:59:59</date>
     <header>
         <status>200 OK</status>
@@ -239,7 +240,7 @@ PLLANO REST API — это бесплатный инструментарий д�
             	<param name=""></param>
         </item>
     </items>
-</price>
+</body>
 ```
 
 
@@ -288,7 +289,7 @@ composer.json
 
 ``` php	
 require '../vendor/autoload.php'; // Подключить Composer
-//	require_once __DIR__.'/Api.php';
+// require_once __DIR__.'/Api.php';
 	
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
