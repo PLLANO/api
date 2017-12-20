@@ -2,6 +2,8 @@
 //	require '../vendor/autoload.php'; // Подключить Composer
 require_once __DIR__.'/Api.php';
 
+use Pllano\Api as Api;
+
 $action = 'price'; // Название модели к которой мы обращаемся
 $metod = 'curl'; // get = file_get_contents или curl
 $id = null; // Уникальный индефикатор item. Если null выводим список.
@@ -23,7 +25,7 @@ $getArray = array(
 	"limit"		=> $limit
 );
 
-$api = new Pllano\Api('ua');
+$api = new Api('ua');
 $records = $api->get($getArray, $action, $metod, $id);
 
 if (isset($records['header']['code'])) {
