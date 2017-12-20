@@ -8,7 +8,8 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 <a name="general"></a>
 ## PLLANO RESTful API работает согластно стантарту [APIS-2018](https://github.com/pllano/APIS-2018)
-Мы используем документацию [APIS-2018](https://github.com/pllano/APIS-2018)
+- Мы используем документацию [APIS-2018](https://github.com/pllano/APIS-2018)
+- Список всех ресурсов PLLANO RESTful API соответствует списку ресурсов [APIS-2018](https://github.com/pllano/APIS-2018)
 
 ### PLLANO REST API потдерживает запросы:
 - `POST /price` Создание записи 
@@ -24,7 +25,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 - `https://{country}.pllano.com/api/v1/{format}/{resource}/{uid}`
 - `{country}` - страна по умолчанию ua
 - `{format}` - формат json или xlm
-- `{resource}` - ресурс к которому обращаемся. Например `price` или `search` - [Список всех ресурсов PLLANO REST API](https://github.com/pllano/APIS-2018)
+- `{resource}` - ресурс к которому обращаемся. Например `price` или `search`
 - `{id}` - уникальный индефикатор
 ### GET запрос к PLLANO REST API
 - `?public_key={public_key}&order={order}&sort={sort}&offset={offset}&limit={limit}`
