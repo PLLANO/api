@@ -6,11 +6,9 @@ PLLANO REST API — это бесплатный инструментарий д�
 
 Вы можете ипользовать наш [PLLANO PHP HTTP client](src/Api.php) или популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
 
-
-
 <a name="general"></a>
 ## PLLANO RESTful API работает согластно стантарту [APIS-2018](https://github.com/pllano/APIS-2018)
-Вы можете пользоваться документацией [APIS-2018](https://github.com/pllano/APIS-2018)
+Мы используем документацию [APIS-2018](https://github.com/pllano/APIS-2018)
 
 ### PLLANO REST API потдерживает запросы:
 - `POST /price` Создание записи 
