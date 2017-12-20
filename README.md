@@ -372,13 +372,13 @@ if ($records['header']['code'] == '200') {
 Общайтесь с нами через почту api@pllano.com
 
 Если вы нашли баг в работе PLLANO REST API или PLLANO PHP HTTP client загляните в
-[issues](https://github.com/pllano/api/issues), возможно, про него мы уже знаем и
+[issues](https://github.com/pllano/pllano-api/issues), возможно, про него мы уже знаем и
 чиним. Если нет, лучше всего сообщить о нём там. Там же вы можете оставлять свои
 пожелания и предложения.
 
 За новостями вы можете следить по
-[коммитам](https://github.com/pllano/api/commits/master) в этом репозитории.
-[RSS](https://github.com/pllano/api/commits/master.atom).
+[коммитам](https://github.com/pllano/pllano-api/commits/master) в этом репозитории.
+[RSS](https://github.com/pllano/pllano-api/commits/master.atom).
 
 Лицензия на библиотеку PLLANO REST API PHP
 -------
