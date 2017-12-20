@@ -252,7 +252,7 @@ PLLANO REST API — это бесплатный инструментарий д�
 	* [Поиск: Конкретный товар](docs/search.md#item)
 
 <a name="php"></a>
-## [PLLANO PHP HTTP client](src/Api.phpp)
+## [PLLANO PHP HTTP client](src/Api.php)
 
 ### Легкий старт
 
