@@ -47,6 +47,9 @@ PLLANO REST API — это бесплатный инструментарий д�
 ### В теле ответа API вернет состояния HTTP или код ошибки.
 [Коды состояния HTTP](https://github.com/pllano/APIS-2018/tree/master/http-codes)
 
+### Демо
+Перейдите по ссылке [https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
+
 ### Структура json
 ```json
 {
