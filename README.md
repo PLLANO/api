@@ -1,71 +1,50 @@
-# PLLANO REST API
+# PLLANO RESTful API
 
 Документация по работе с PLLANO REST API
 
 PLLANO REST API — это бесплатный инструментарий для интеграции [pllano.com](https://pllano.com/) в ваш продукт.
 
-Вы можете ипользовать популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
+Вы можете ипользовать наш [PLLANO PHP HTTP client](src/Api.php) или популярный PHP HTTP client [Guzzle](https://github.com/guzzle/guzzle) - [Документация](http://docs.guzzlephp.org/en/stable/)
 
-Вы можете ипользовать наш [PLLANO PHP HTTP client](src/Api.php)
+
 
 <a name="general"></a>
+## PLLANO RESTful API работает согластно стантарту [APIS-2018](https://github.com/pllano/APIS-2018)
+Вы можете пользоваться документацией [APIS-2018](https://github.com/pllano/APIS-2018)
 
 ### PLLANO REST API потдерживает запросы:
-
-`POST /price` Создание записи 
-
-`POST /price/42` Ошибка
-
-`GET /price` Список прайс-строк
-
-`GET /price/42` Данные конкретной прайс-строки
-
-`PUT /price` Обновить данные прайс-строк
-
-`PUT /price/42` Обновить данные конкретной прайс-строки
-
-`DELETE /price` Удалить все прайс-строки
-
-`DELETE /price/42` Удалить конкретную прайс-строку
+- `POST /price` Создание записи 
+- `POST /price/42` Ошибка
+- `GET /price` Список прайс-строк
+- `GET /price/42` Данные конкретной прайс-строки
+- `PUT /price` Обновить данные прайс-строк
+- `PUT /price/42` Обновить данные конкретной прайс-строки
+- `DELETE /price` Удалить все прайс-строки
+- `DELETE /price/42` Удалить конкретную прайс-строку
 
 Для тех кто может отправлять только с `POST` и `GET` запросы мы дублируем тип запроса в параметре `query`
 
 ### URL PLLANO REST API
-
-`https://{country}.pllano.com/api/v1/{format}/{model}/{uid}`
-
-`{country}` - страна по умолчанию ua
-
-`{format}` - формат json или xlm
-
-`{model}` - модель к которой обращаемся. Например price или search. [Список всех ресурсов PLLANO REST API](docs/query.md)
-
-`{id}` - уникальный индефикатор
-
+- `https://{country}.pllano.com/api/v1/{format}/{resource}/{uid}`
+- `{country}` - страна по умолчанию ua
+- `{format}` - формат json или xlm
+- `{resource}` - ресурс к которому обращаемся. Например `price` или `search`. [Список всех ресурсов PLLANO REST API](https://github.com/pllano/APIS-2018)
+- `{id}` - уникальный индефикатор
 ### GET запрос к PLLANO REST API
-
-`?public_key={public_key}&order={order}&sort={sort}&offset={offset}&limit={limit}`
-
-`{public_key}` - Ваш ключ PLLANO REST API
-
-`{limit}` - Записей на страницу. По умолчанию 10
-
-`{offset}` - Страница. По умолчанию 0
-
-`{order}` - Тип сортировки. По умолчанию asc
-
-`{sort}` - Поле сортировки. По умолчанию uid
-
-[Список всех параметров запроса](docs/query.md)
+- `?public_key={public_key}&order={order}&sort={sort}&offset={offset}&limit={limit}`
+- `{public_key}` - Ваш ключ PLLANO REST API
+- `{limit}` - Записей на страницу. По умолчанию 10
+- `{offset}` - Страница. По умолчанию 0
+- `{order}` - Тип сортировки. По умолчанию asc
+- `{sort}` - Поле сортировки. По умолчанию uid
+[Список всех параметров запроса](https://github.com/pllano/APIS-2018)
 
 ### PLLANO REST API - Всегда возвращает код 200 даже при логических ошибках !
-
 `HTTP/1.1 200 OK`
 
 `Content-Type: application/json`
 
 ### В теле ответа API вернет код ошибки, статус и описание ошибки.
-
 [Коды состояния HTTP](https://github.com/pllano/APIS-2018/tree/master/http-codes)
 
 ### Структура json
@@ -79,11 +58,12 @@ PLLANO REST API — это бесплатный инструментарий д�
     },
     "response": {
         "api": "v1.0",
+        "auth": "QueryKeyAuth",
         "total": "1000"
     },
     "request": {
         "query": "GET",
-        "model": "price",
+        "resource": "price",
         "limit": "10",
         "offset": "0",
         "order": "DESC",
@@ -93,15 +73,12 @@ PLLANO REST API — это бесплатный инструментарий д�
         "brand": "",
         "serie": "",
         "articul": "",
-        "brand_id": "",
-        "product_id": "",
         "search": ""
     },
     "body": {
         "items": [
             {
                 "item": {
-                    "id": "",
                     "product_id": "",
                     "parent_id": "",
                     "brand_id": "",
@@ -339,32 +316,18 @@ composer.json
 	"guzzlehttp/guzzle": "^6.3"
 }
 ```
-
 ``` php	
 require '../vendor/autoload.php'; // Подключить Composer
-
-$client = new \GuzzleHttp\Client();
+use GuzzleHttp\Client as Guzzle;
+// Подключаем Guzzle
+$client = new Guzzle();
+// Отправляем запрос
 $response = $client->request('GET', 'https://ua.pllano.com/api/v1/json/price/?public_key=test');
+// Получаем тело ответа
 $output = $response->getBody();
-
-// Чистим все что не нужно, иначе json_decode не сможет конвертировать json в массив
-for ($i = 0; $i <= 31; ++$i) {$output = str_replace(chr($i), "", $output);}
-$output = str_replace(chr(127), "", $output);
-if (0 === strpos(bin2hex($output), 'efbbbf')) {$output = substr($output, 3);}
-
-$records = json_decode($output, true);
-
-if (isset($records['header']['code'])) {
-if ($records['header']['code'] == '200') {
-	$count = count($records['price']['items']);
-	if ($count >= 1) {
-		foreach($records['price']['items'] as $item)
-		{
-			print_r($item['item']['id']);
-		}
-	}
-}
-}
+$records = json_encode(json_decode($output, true), JSON_PRETTY_PRINT);
+// Вывести на экран json
+print_r($records);
 ```
 
 <a name="feedback"></a>
@@ -384,4 +347,4 @@ if ($records['header']['code'] == '200') {
 Лицензия на библиотеку PLLANO REST API PHP
 -------
 
-The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
+The MIT License (MIT). Please see [LICENSE](https://github.com/pllano/pllano-api/blob/master/LICENSE.md) for more information.
