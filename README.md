@@ -150,7 +150,7 @@ $records = json_encode(json_decode($output, true), JSON_PRETTY_PRINT);
 print_r($records);
 ```
 
-### Структура json
+### Структура ответа API в json формате
 ```json
 {
     "headers": {
