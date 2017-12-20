@@ -48,91 +48,6 @@ PLLANO RESTful API — это бесплатный инструментарий 
 ### Демо
 Перейдите по ссылке [https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
 
-### Структура json
-```json
-{
-    "headers": {
-        "status": "200 OK",
-        "code": "200",
-        "message": "OK",
-	"message_id": "https:\/\/github.com\/pllano\/APIS-2018\/tree\/master\/http-codes\/200.md"
-    },
-    "response": {
-        "api": "v1.0",
-        "auth": "QueryKeyAuth",
-        "total": "1000"
-    },
-    "request": {
-        "query": "GET",
-        "resource": "price",
-        "limit": "10",
-        "offset": "0",
-        "order": "DESC",
-        "sort": "id",
-        "state": "1",
-        "type": "",
-        "brand": "",
-        "serie": "",
-        "articul": "",
-        "search": ""
-    },
-    "body": {
-        "items": [
-            {
-                "item": {
-                    "product_id": "",
-                    "parent_id": "",
-                    "brand_id": "",
-                    "price": "",
-                    "oldprice": "",
-                    "available": "",
-                    "guarantee": "",
-                    "ean": "",
-                    "category": {
-                        "id": "",
-                        "parent_id": "",
-                        "name": "",
-                        "alias": ""
-                    },
-                    "supplier": {
-                        "id": "",
-                        "dropshipping": "",
-                        "pay_online": ""
-                    },
-                    "seller": {
-                        "id": "",
-                        "name": ""
-                    },
-                    "delivery": {
-                        "terms": ""
-                    },
-                    "currency": {
-                        "currency_id": "UAH",
-                        "short_sign": "₴",
-                        "name": "грн.",
-                    },
-                    "name": "",
-                    "type": "",
-                    "brand": "",
-                    "serie": "",
-                    "articul": "",
-                    "url": "",
-                    "image": {
-                        "1": "",
-                        "2": ""
-                    },
-                    "description": "-",
-                    "param": {
-                        "Гарантия": "12 месяцев",
-                        "Страна производитель": "Украина"
-                    }
-		}
-            }
-         ]
-    }
-}
-```
-
 <a name="php"></a>
 ## [PLLANO PHP HTTP client](src/Api.php)
 
@@ -233,6 +148,91 @@ $output = $response->getBody();
 $records = json_encode(json_decode($output, true), JSON_PRETTY_PRINT);
 // Вывести на экран json
 print_r($records);
+```
+
+### Структура json
+```json
+{
+    "headers": {
+        "status": "200 OK",
+        "code": "200",
+        "message": "OK",
+	"message_id": "https:\/\/github.com\/pllano\/APIS-2018\/tree\/master\/http-codes\/200.md"
+    },
+    "response": {
+        "api": "v1.0",
+        "auth": "QueryKeyAuth",
+        "total": "1000"
+    },
+    "request": {
+        "query": "GET",
+        "resource": "price",
+        "limit": "10",
+        "offset": "0",
+        "order": "DESC",
+        "sort": "id",
+        "state": "1",
+        "type": "",
+        "brand": "",
+        "serie": "",
+        "articul": "",
+        "search": ""
+    },
+    "body": {
+        "items": [
+            {
+                "item": {
+                    "product_id": "",
+                    "parent_id": "",
+                    "brand_id": "",
+                    "price": "",
+                    "oldprice": "",
+                    "available": "",
+                    "guarantee": "",
+                    "ean": "",
+                    "category": {
+                        "id": "",
+                        "parent_id": "",
+                        "name": "",
+                        "alias": ""
+                    },
+                    "supplier": {
+                        "id": "",
+                        "dropshipping": "",
+                        "pay_online": ""
+                    },
+                    "seller": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "delivery": {
+                        "terms": ""
+                    },
+                    "currency": {
+                        "currency_id": "UAH",
+                        "short_sign": "₴",
+                        "name": "грн.",
+                    },
+                    "name": "",
+                    "type": "",
+                    "brand": "",
+                    "serie": "",
+                    "articul": "",
+                    "url": "",
+                    "image": {
+                        "1": "",
+                        "2": ""
+                    },
+                    "description": "-",
+                    "param": {
+                        "Гарантия": "12 месяцев",
+                        "Страна производитель": "Украина"
+                    }
+		}
+            }
+         ]
+    }
+}
 ```
 
 <a name="feedback"></a>
