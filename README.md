@@ -1,5 +1,4 @@
 # PLLANO API
-
 Документация по работе с PLLANO API
 
 PLLANO RESTful API — это бесплатный инструментарий для интеграции [pllano.com](https://pllano.com/) в ваш продукт.
@@ -10,6 +9,9 @@ PLLANO RESTful API — это бесплатный инструментарий 
 ## PLLANO API работает согластно стантарту [APIS-2018](https://github.com/pllano/APIS-2018)
 #### Используйте документацию [APIS-2018](https://github.com/pllano/APIS-2018)
 #### Список всех ресурсов PLLANO API соответствует списку ресурсов [APIS-2018](https://github.com/pllano/APIS-2018)
+
+## Новый адрес сервера API
+https://api.pllano.com/
 
 ### PLLANO API потдерживает запросы:
 - `POST /price` Создание записи 
@@ -22,9 +24,7 @@ PLLANO RESTful API — это бесплатный инструментарий 
 - `DELETE /price/42` Удалить конкретную прайс-строку
 
 ### URL PLLANO API
-- `https://{country}.pllano.com/api/v1/{format}/{resource}/{uid}`
-- `{country}` - страна по умолчанию ua
-- `{format}` - формат json или xlm
+- `https://api.pllano.com/{resource}/{uid}`
 - `{resource}` - ресурс к которому обращаемся. Например `price` или `search`
 - `{id}` - уникальный индефикатор
 ### GET запрос к API
@@ -46,7 +46,7 @@ PLLANO RESTful API — это бесплатный инструментарий 
 [Коды состояния HTTP](https://github.com/pllano/APIS-2018/tree/master/http-codes)
 
 ### Демо
-Перейдите по ссылке [https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
+Перейдите по ссылке [https://api.pllano.com/price?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://api.pllano.com/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
 
 <a name="php"></a>
 ## [PLLANO PHP HTTP client](src/Api.php)
@@ -59,7 +59,7 @@ PLLANO RESTful API — это бесплатный инструментарий 
 
 PLLANO REST API PHP обратится по адресу:
 
-[https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://ua.pllano.com/api/v1/json/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
+[https://api.pllano.com/price?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://api.pllano.com/price?public_key=test&order=asc&sort=uid&offset=0&limit=10)
 
 В ответ получит массив json конвертирует его в массив PHP
 
