@@ -46,7 +46,7 @@ https://api.pllano.com/
 [Коды состояния HTTP](https://github.com/pllano/APIS-2018/tree/master/http-codes)
 
 ### Демо
-Перейдите по ссылке [https://api.pllano.com/price?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://api.pllano.com/price/?public_key=test&order=asc&sort=uid&offset=0&limit=10)
+Перейдите по ссылке [https://api.pllano.com/price?public_key=test&order=asc&sort=uid&offset=0&limit=10](https://api.pllano.com/price?public_key=test&order=asc&sort=uid&offset=0&limit=10)
 
 <a name="php"></a>
 ## [PLLANO PHP HTTP client](src/Api.php)
