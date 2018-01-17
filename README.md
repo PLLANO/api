@@ -14,12 +14,13 @@ PLLANO RESTful API — это бесплатный инструментарий 
 Новая сайт API быстрее в несколько раз за прошлый. Появилась возможность регистрации продавца при установке сайта. 
 ### Ресурсы PLLANO RESTful API
 Сейчас доступны следующие ресурсы:
-- [/site](https://api.pllano.com/site) - Конфигурация сайта (Требует public_key)
-- [/price](https://api.pllano.com/price) - Товары и цены (Требует public_key)
-- [/install](https://api.pllano.com/install) - Установка сайта (Работает без public_key)
-- [/language](https://api.pllano.com/language) - Локализация (Работает без public_key)
-- [/stores_list](https://api.pllano.com/stores_list) - Список типов магазинов (Работает без public_key)
-- [/templates_list](https://api.pllano.com/templates_list) - Список шаблонов (Работает без public_key)
+- [/site](https://api.pllano.com/site) - `GET` - Конфигурация сайта (Требует public_key)
+- [/price](https://api.pllano.com/price) - `GET` - Товары и цены (Требует public_key)
+- [/order](https://api.pllano.com/order) - `GET` `POST` `PUT` - Заказы (Требует public_key)
+- [/install](https://api.pllano.com/install) - `POST` `PUT` - Установка сайта (Работает без public_key)
+- [/language](https://api.pllano.com/language) - `GET` - Локализация (Работает без public_key)
+- [/stores_list](https://api.pllano.com/stores_list) - `GET` - Список типов магазинов (Работает без public_key)
+- [/templates_list](https://api.pllano.com/templates_list) - `GET` - Список шаблонов (Работает без public_key)
 
 [Список всех запланированных ресурсов PLLANO API](https://github.com/pllano/APIS-2018)
 
