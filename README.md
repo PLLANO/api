@@ -21,6 +21,7 @@ PLLANO RESTful API — это бесплатный инструментарий 
 - [/language](https://api.pllano.com/language) - `GET` - Локализация (Работает без public_key)
 - [/stores_list](https://api.pllano.com/stores_list) - `GET` - Список типов магазинов (Работает без public_key)
 - [/templates_list](https://api.pllano.com/templates_list) - `GET` - Список шаблонов (Работает без public_key)
+- [/test](https://api.pllano.com/test) - `GET` `POST` `PUT` `PATCH` `DELETE` - Тесты (Работает без public_key)
 
 [Список всех запланированных ресурсов PLLANO API](https://github.com/pllano/APIS-2018)
 
