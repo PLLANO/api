@@ -53,7 +53,7 @@ private $_country;
 	*
 	* @return array
 	*/
-	public function get($params = array(), $action, $metod = null, $uid = null)
+	public function get($params = [], $action, $metod = null, $uid = null)
 	{
 		
 		if(!isset($params['public_key'])){
@@ -136,7 +136,7 @@ private $_country;
 	*
 	* @return array
 	*/
-	public function post($params = array(), $action, $metod = null, $uid = null)
+	public function post($params = [], $action, $metod = null, $uid = null)
 	{
 		if(!isset($params['public_key'])){
 			throw new InvalidArgumentException('public_key is null');
@@ -205,7 +205,7 @@ private $_country;
 	*
 	* @return array
 	*/
-	public function put($params = array(), $action, $metod = null, $uid = null)
+	public function put($params = [], $action, $metod = null, $uid = null)
 	{
 
 		if(!isset($params['public_key'])){
@@ -279,7 +279,7 @@ private $_country;
 	*
 	* @return array
 	*/
-	public function delete($params = array(), $action, $metod = null, $uid = null)
+	public function delete($params = [], $action, $metod = null, $uid = null)
 	{
 
 		if(!isset($params['public_key'])){
